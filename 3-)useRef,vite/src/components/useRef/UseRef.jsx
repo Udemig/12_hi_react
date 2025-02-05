@@ -12,8 +12,6 @@ const Useref = () => {
     inputRef.current.focus();
   };
 
-  console.log(inputRef);
-
   return (
     <div>
       <div className="d-flex  align-items-center justify-content-center gap-3">
@@ -32,6 +30,9 @@ const Useref = () => {
           placeholder="Birşeyler yazınız ..."
         />
       </div>
+      <button id="btn" className=" btn btn-info mt-5">
+        Example Btn
+      </button>
     </div>
   );
 };
