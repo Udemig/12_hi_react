@@ -1,0 +1,69 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    @media (max-width: 750px) {
+      font-size: 25px;
+    }
+  }
+  div {
+    display: flex;
+    gap: 20px;
+
+    button {
+      background-color: white;
+      box-shadow: $shadow-2;
+      font-size: 20px;
+      padding: 10px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+    }
+    .ns {
+      width: 50px;
+      @media (max-width: 650px) {
+        display: none;
+      }
+    }
+
+    .add {
+      display: flex;
+      gap: 10px;
+      background-color: $purple;
+      color: white;
+      border-radius: 15px;
+      padding: 10px 20px;
+      white-space: nowrap;
+      @media (max-width: 750px) {
+        padding: 5px;
+        font-size: 18px;
+      }
+      span {
+        @media (max-width: 750px) {
+          font-size: 15px;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: $shadow-2;
+
+      button {
+        box-shadow: none;
+        color: $purple;
+        padding: 0 10px;
+      }
+
+      input {
+        width: 300px;
+        @media (max-width: 750px) {
+          width: 200px;
+        }
+      }
+    }
+  }
+}

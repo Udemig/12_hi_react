@@ -1,0 +1,124 @@
+{
+  "contact": [
+    {
+      "id": 1,
+      "name": "Esra Akgündoğdu",
+      "position": "Frontend Developer",
+      "company": "Udemig",
+      "phone": "+90 555 444 33 22",
+      "email": "esraakgundogdu@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Mert Yılmaz",
+      "position": "Backend Developer",
+      "company": "TechSoft",
+      "phone": "+90 532 111 22 33",
+      "email": "mertyilmaz@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Zeynep Karaca",
+      "position": "UI/UX Designer",
+      "company": "DesignHub",
+      "phone": "+90 533 222 11 44",
+      "email": "zeynepkaraca@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Ahmet Can",
+      "position": "Full Stack Developer",
+      "company": "Innovatech",
+      "phone": "+90 534 333 22 55",
+      "email": "ahmetcan@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Burak Demir",
+      "position": "Data Scientist",
+      "company": "DataWorks",
+      "phone": "+90 535 444 33 66",
+      "email": "burakdemir@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "Elif Şahin",
+      "position": "Software Engineer",
+      "company": "CodeMasters",
+      "phone": "+90 536 555 44 77",
+      "email": "elifsahin@gmail.com"
+    },
+    {
+      "id": 7,
+      "name": "Emre Özkan",
+      "position": "DevOps Engineer",
+      "company": "CloudNet",
+      "phone": "+90 537 666 55 88",
+      "email": "emreozkan@gmail.com"
+    },
+    {
+      "id": 8,
+      "name": "Gizem Yıldız",
+      "position": "Mobile Developer",
+      "company": "AppSolutions",
+      "phone": "+90 538 777 66 99",
+      "email": "gizemyildiz@gmail.com"
+    },
+    {
+      "id": 9,
+      "name": "Hakan Yılmaz",
+      "position": "Cyber Security Expert",
+      "company": "SecureTech",
+      "phone": "+90 539 888 77 00",
+      "email": "hakanyilmaz@gmail.com"
+    },
+    {
+      "id": 10,
+      "name": "Deniz Arslan",
+      "position": "Machine Learning Engineer",
+      "company": "AI Labs",
+      "phone": "+90 540 999 88 11",
+      "email": "denizarslan@gmail.com"
+    },
+    {
+      "id": 11,
+      "name": "Ece Korkmaz",
+      "position": "System Administrator",
+      "company": "NetSolutions",
+      "phone": "+90 541 101 99 22",
+      "email": "ecekorkmaz@gmail.com"
+    },
+    {
+      "id": 12,
+      "name": "Furkan Kaya",
+      "position": "Game Developer",
+      "company": "GameStudio",
+      "phone": "+90 542 202 88 33",
+      "email": "furkankaya@gmail.com"
+    },
+    {
+      "id": 13,
+      "name": "Büşra Aydın",
+      "position": "Embedded Systems Engineer",
+      "company": "TechEmbed",
+      "phone": "+90 543 303 77 44",
+      "email": "busraaydin@gmail.com"
+    },
+    {
+      "id": 14,
+      "name": "Okan Çelik",
+      "position": "AI Engineer",
+      "company": "DeepMind AI",
+      "phone": "+90 544 404 66 55",
+      "email": "okancelik@gmail.com"
+    },
+    {
+      "id": 15,
+      "name": "Selin Öztürk",
+      "position": "Blockchain Developer",
+      "company": "CryptoWorks",
+      "phone": "+90 545 505 55 66",
+      "email": "selinozturk@gmail.com"
+    }
+  ]
+}
