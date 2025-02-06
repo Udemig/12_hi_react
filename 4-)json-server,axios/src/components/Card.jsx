@@ -3,24 +3,28 @@ import { RiEdit2Fill } from "react-icons/ri";
 import { LiaTrashAlt } from "react-icons/lia";
 import { FaPhone } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-const Card = () => {
+const Card = ({ contact, handleDelete, handleEdit }) => {
+  const [name, surname] = contact.name.split(" ");
+
   return (
     <div className="card">
       {/* Buttons */}
       <div className="buttons">
-        <button>
+        <button onClick={() => handleEdit(contact)}>
           <RiEdit2Fill />
         </button>
-        <button>
+        <button onClick={() => handleDelete(contact.id)}>
           <LiaTrashAlt />
         </button>
       </div>
 
       {/* User Detail */}
-      <h1>K A</h1>
-      <h3>İsim</h3>
-      <p>Pozisyon Bilgisi</p>
-      <p>Şirket Adı</p>
+      <h1>
+        {name[0]} {surname[0]}{" "}
+      </h1>
+      <h3>{contact.name} </h3>
+      <p>{contact.position}</p>
+      <p>{contact.company}</p>
 
       {/* Bottom */}
       <div className="bottom">
@@ -28,13 +32,13 @@ const Card = () => {
           <span>
             <FaPhone />
           </span>
-          <span>Telefon no</span>
+          <span>{contact.phone}</span>
         </div>
         <div>
           <span>
             <IoMdMail />
           </span>
-          <span>Mail</span>
+          <span>{contact.email}</span>
         </div>
       </div>
     </div>

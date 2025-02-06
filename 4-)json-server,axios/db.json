@@ -25,12 +25,12 @@
       "email": "zeynepkaraca@gmail.com"
     },
     {
-      "id": 4,
-      "name": "Ahmet Can",
+      "name": "Mehmet Can ",
       "position": "Full Stack Developer",
-      "company": "Innovatech",
+      "company": "Udemig",
       "phone": "+90 534 333 22 55",
-      "email": "ahmetcan@gmail.com"
+      "email": "mehmetcanseyhan@gmail.com",
+      "id": 4
     },
     {
       "id": 5,
@@ -105,20 +105,52 @@
       "email": "busraaydin@gmail.com"
     },
     {
-      "id": 14,
-      "name": "Okan Çelik",
-      "position": "AI Engineer",
-      "company": "DeepMind AI",
-      "phone": "+90 544 404 66 55",
-      "email": "okancelik@gmail.com"
+      "name": "Muhammed Karaaslan",
+      "position": "Frontend Developer",
+      "company": "Emaartech",
+      "phone": "5556667898",
+      "email": "muhammed@gmail.com",
+      "id": 16
     },
     {
-      "id": 15,
-      "name": "Selin Öztürk",
-      "position": "Blockchain Developer",
-      "company": "CryptoWorks",
-      "phone": "+90 545 505 55 66",
-      "email": "selinozturk@gmail.com"
+      "name": "Nefel Bakşi",
+      "position": "React Developer",
+      "company": "Mimcode",
+      "phone": "55566678467",
+      "email": "nefelbakşi@gmail.com",
+      "id": 17
+    },
+    {
+      "name": "Selin Çevik",
+      "position": "Frontend Developer",
+      "company": "Udemig",
+      "phone": "+90 555 666 32 44",
+      "email": "selinçevik@gmail.com",
+      "id": 18
+    },
+    {
+      "name": "Mervenur Geçici",
+      "position": "React Developer",
+      "company": "Mimcode",
+      "phone": "55566678467",
+      "email": "mervenur@gmail.com",
+      "id": 19
+    },
+    {
+      "name": "Esra Salur",
+      "position": "Backend Frontend",
+      "company": "Didiyos",
+      "phone": "55566678467",
+      "email": "esra@gmail.com",
+      "id": 21
+    },
+    {
+      "name": "Yusuf YAMAN",
+      "position": "React Developer",
+      "company": "Emaartech",
+      "phone": "5556667898",
+      "email": "yusufyamanjob@gmail.com",
+      "id": 22
     }
   ]
 }
