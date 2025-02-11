@@ -1,0 +1,104 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Atomik Alışkanlıklar",
+      "author": "James Clear",
+      "image": "https://picsum.photos/900",
+      "year": 2020,
+      "page": 305,
+      "description": "Küçük değişimlerin büyük sonuçlar doğurabileceğini anlatan etkileyici bir kişisel gelişim kitabı.",
+      "price": 76.32
+    },
+    {
+      "id": 2,
+      "title": "Düşün ve Zengin Ol",
+      "author": "Napoleon Hill",
+      "image": "https://picsum.photos/901",
+      "year": 1937,
+      "page": 320,
+      "description": "Başarı ve zenginlik sırlarını öğrenmek isteyenler için zamansız bir rehber.",
+      "price": 71.86
+    },
+    {
+      "id": 3,
+      "title": "Alışkanlıkların Gücü",
+      "author": "Charles Duhigg",
+      "image": "https://picsum.photos/902",
+      "year": 2012,
+      "page": 400,
+      "description": "Alışkanlıkların beynimizdeki etkilerini inceleyen ilgi çekici bir kitap.",
+      "price": 48.07
+    },
+    {
+      "id": 4,
+      "title": "Sapiens: İnsan Türünün Kısa Bir Tarihi",
+      "author": "Yuval Noah Harari",
+      "image": "https://picsum.photos/903",
+      "year": 2011,
+      "page": 464,
+      "description": "İnsanlık tarihinin başlangıcından günümüze kadar olan serüvenini anlatan sürükleyici bir eser.",
+      "price": 54.04
+    },
+    {
+      "id": 5,
+      "title": "Zamanın Kısa Tarihi",
+      "author": "Stephen Hawking",
+      "image": "https://picsum.photos/904",
+      "year": 1988,
+      "page": 212,
+      "description": "Evrenin sırlarını merak edenler için yazılmış popüler bir bilim klasiği.",
+      "price": 25.1
+    },
+    {
+      "id": 6,
+      "title": "Mutluluk Sanatı",
+      "author": "Dalai Lama",
+      "image": "https://picsum.photos/905",
+      "year": 1998,
+      "page": 352,
+      "description": "Mutlu bir yaşam sürmek için derin öğretiler sunan ilham verici bir kitap.",
+      "price": 64.25
+    },
+    {
+      "id": 7,
+      "title": "Bilinçaltının Gücü",
+      "author": "Joseph Murphy",
+      "image": "https://picsum.photos/906",
+      "year": 1963,
+      "page": 320,
+      "description": "Bilinçaltımızın potansiyelini ortaya çıkarmamıza yardımcı olan bir başyapıt.",
+      "price": 59.45
+    },
+    {
+      "id": 8,
+      "title": "Akıllı Yatırımcı",
+      "author": "Benjamin Graham",
+      "image": "https://picsum.photos/907",
+      "year": 1949,
+      "page": 640,
+      "description": "Finans ve yatırım dünyasına giriş yapmak isteyenler için vazgeçilmez bir rehber.",
+      "price": 80.67
+    },
+    {
+      "id": 9,
+      "title": "Cesur Yeni Dünya",
+      "author": "Aldous Huxley",
+      "image": "https://picsum.photos/908",
+      "year": 1932,
+      "page": 288,
+      "description": "Distopik bir gelecekte geçen ve toplumu sorgulatan çarpıcı bir roman.",
+      "price": 29.75
+    },
+    {
+      "id": 10,
+      "title": "1984",
+      "author": "George Orwell",
+      "image": "https://picsum.photos/909",
+      "year": 1949,
+      "page": 328,
+      "description": "Baskıcı rejimlerin etkilerini ele alan ve özgürlük kavramını sorgulatan bir klasik.",
+      "price": 34.12
+    }
+  ]
+}

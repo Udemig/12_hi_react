@@ -1,29 +1,13 @@
-import { Link } from "react-router-dom";
-
 function Home() {
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Home</h1>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <Link
-          style={{ textDecoration: "none", color: "white", fontSize: 20 }}
-          to="/detay/1"
-        >
-          1.ürünün detay sayfasına git
-        </Link>
-        <Link
-          style={{ textDecoration: "none", color: "white", fontSize: 20 }}
-          to="/detay/2"
-        >
-          2.ürünün detay sayfasına git
-        </Link>
-        <Link
-          style={{ textDecoration: "none", color: "white", fontSize: 20 }}
-          to="/detay/3"
-        >
-          3.ürünün detay sayfasına git
-        </Link>
-      </div>
+    <div className="container my-5 d-flex flex-column align-items-center gap-5 justify-content-around">
+      <h1 className="mt-5">Hoş Geldiniz</h1>
+
+      <img src="/welcome.webp" className="img-fluid rounded image" alt="" />
+
+      <p className="fw-bold">
+        Ürünler Sayfasında Yeni Çıkan Bütün Kitaplara Ulaşabilirisniz
+      </p>
     </div>
   );
 }
