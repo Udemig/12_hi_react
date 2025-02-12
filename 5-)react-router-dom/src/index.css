@@ -42,3 +42,9 @@ h1 {
   max-height: 250px;
   object-fit: cover;
 }
+
+.aside {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}

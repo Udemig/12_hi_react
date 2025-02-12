@@ -33,3 +33,9 @@
 # Dynamic Routes:
 
 - Bir kitap projesi düşününüz.Bu projede bulunan tüm kitaplar için birer detay sayfası olsun.Bunu her bir kitap için detay sayfası oluşturamayacağımızdan tek bir sayfayı dinamik şekilde renderlarız.Bu işleme dinamik route yapısı denir.
+
+# Nested Routes
+
+- Bir kapsayıcı içerisinde farklı bileşenlerin oluşturulması işlemine `Nested Routes` denir.
+
+- Bu özellik sayesinde sadece belirtilen sayfalar için ortak özellikler gerçekleştirilir.
