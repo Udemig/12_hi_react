@@ -48,18 +48,16 @@ export const categories = [
     path: "kozmetik",
     divider: true,
   },
-  { name: "Ayarlar", icon: <FiSettings />, type: "menu", path: "/" },
+  { name: "Ayarlar", icon: <FiSettings />, type: "menu" },
   {
     name: "Report History",
     icon: <AiOutlineFlag />,
     type: "menu",
-    path: "/",
   },
-  { name: "Yardım", icon: <FiHelpCircle />, type: "menu", path: "/" },
+  { name: "Yardım", icon: <FiHelpCircle />, type: "menu" },
   {
     name: "Send feedback",
     icon: <RiFeedbackLine />,
     type: "menu",
-    path: "/",
   },
 ];
