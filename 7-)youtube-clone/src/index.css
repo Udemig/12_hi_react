@@ -25,10 +25,6 @@ body {
 }
 
 /* Detail Page */
-
-.detail-page {
-}
-
 .page-content {
   max-width: 1600px !important;
   margin: auto;
@@ -43,4 +39,27 @@ body {
     grid-template-columns: 1fr;
     padding: 30px 20px;
   }
+}
+
+/* Row */
+@media (min-width: 600px) {
+  .wrapper .row {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.col {
+  display: grid;
+  gap: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 168px auto;
+  gap: 20px;
+}
+
+.row .pp,
+.row .chanel-title {
+  display: none;
 }

@@ -4,6 +4,9 @@ import api from "../../utils/api";
 import ReactPlayer from "react-player";
 import { useState } from "react";
 import ChannelInfo from "../../components/ChannelInfo";
+import Description from "../../components/Description";
+import Comments from "../../components/Comments";
+import VideoCard from "../../components/VideoCard";
 
 const Detail = () => {
   // React Router Dom içerisinden useSearchParams ı import et ve kurulumunu yap
@@ -16,10 +19,14 @@ const Detail = () => {
   // Url'den v parametresinin karşılığını al
   const id = searchParams.get("v");
 
-  console.log(video?.author.channelId);
-
   useEffect(() => {
-    api.get(`/video/details/?id=${id}`).then((res) => setVideo(res.data));
+    // Api'a gönderilecek parametreler
+    const params = {
+      id,
+      extend: 1,
+    };
+
+    api.get(`/video/info`, { params }).then((res) => setVideo(res.data));
   }, []);
 
   return (
@@ -46,13 +53,20 @@ const Detail = () => {
               {video?.title}
             </h1>
             {/* Chanel */}
-            <ChannelInfo id={video?.author.channelId} />
+            <ChannelInfo video={video} />
+            {/* Description */}
+            <Description video={video} />
+            {/* Comments */}
+            <Comments videoId={id} />
           </div>
         </div>
 
         {/* Önerilen Videolar  */}
-        <div className="bg-yellow-300">
-          <h1>Önerilen Videolar</h1>
+        <div className="flex flex-col gap-5 p-1">
+          {video?.relatedVideos.data.map(
+            (i, key) =>
+              i.type === "video" && <VideoCard video={i} key={key} isRow />
+          )}
         </div>
       </div>
     </div>
