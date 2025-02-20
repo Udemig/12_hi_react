@@ -26,7 +26,7 @@ const SkeletonLoader = () => {
 
 const BasicLoader = () => {
   return (
-    <div className="text-center">
+    <div className="text-center mt-20">
       <div role="status">
         <svg
           aria-hidden="true"

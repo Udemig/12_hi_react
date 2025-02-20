@@ -1,4 +1,4 @@
-const Error = ({ info }) => {
+const ErrorComponent = ({ info }) => {
   return (
     <div className="bg-red-500 h-fit rounded p-4 flex flex-col gap-5 mt-44 mx-auto text-center">
       <p>Üzgünüz bir hata oluştu daha sonra tekrar deneyiniz</p>
@@ -7,4 +7,4 @@ const Error = ({ info }) => {
   );
 };
 
-export default Error;
+export default ErrorComponent;

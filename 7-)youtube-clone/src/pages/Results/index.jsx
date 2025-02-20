@@ -3,6 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import api from "../../utils/api";
 import { useState } from "react";
 import VideoCard from "../../components/VideoCard";
+import ErrorComponent from "../../components/Error";
+import { BasicLoader } from "../../components/Loader";
 
 const Results = () => {
   // Api kendisinden istenen tüm verileri tek seferde vermez.Bunun sebebi çok fazla verinin tek seferde işlenmesinin serverı yoracak olmasıdır.Tek seferde  verileri vermediğinden bunu pagination [sayfalama] ile yapar.Bir sonraki sayfada bulunan verileri almak içinse bize bir token verir.Bu token'ı bir sonraki istekte apia verirsek bizim için sıradaki sayfanın verilerini getircektir.Bizde bu projedeki arama kısmında bu özelliği geliştirdik.
@@ -41,31 +43,35 @@ const Results = () => {
 
   return (
     <div className="p-4 sm:p-6 md:p-10 h-[93vh] overflow-y-auto">
-      {/* Result Title */}
-      <h2 className="mb-5 text-xl">
-        <span className="font-bold">Javascript</span> için sonuçlar
-      </h2>
-
-      {/* Wrapper */}
-      <div className="wrapper flex flex-col gap-5 justify-center">
-        {error ? (
-          <h1>Hataaaa</h1>
-        ) : (
-          data.map(
-            (i, key) =>
-              i.type === "video" && <VideoCard key={key} video={i} isRow />
-          )
-        )}
-      </div>
-
-      <div className="flex justify-center">
-        <button
-          onClick={() => setPage(page + 1)}
-          className="bg-zinc-600 py-2 px-5 rounded-md my-10 hover:bg-zinc-800 transition"
-        >
-          Daha Fazla
-        </button>
-      </div>
+      {error ? (
+        <ErrorComponent />
+      ) : isLoading ? (
+        <BasicLoader />
+      ) : (
+        <>
+          <h2 className="mb-5 text-xl">
+            <span className="font-bold">Javascript</span> için sonuçlar
+          </h2>
+          <div className="wrapper flex flex-col gap-5 justify-center">
+            {error ? (
+              <h1>Hataaaa</h1>
+            ) : (
+              data.map(
+                (i, key) =>
+                  i.type === "video" && <VideoCard key={key} video={i} isRow />
+              )
+            )}
+          </div>
+          <div className="flex justify-center">
+            <button
+              onClick={() => setPage(page + 1)}
+              className="bg-zinc-600 py-2 px-5 rounded-md my-10 hover:bg-zinc-800 transition"
+            >
+              Daha Fazla
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
