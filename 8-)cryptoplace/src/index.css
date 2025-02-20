@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+* {
+  outline: none;
+}
+
+body {
+  background-color: #0d054d;
+  color: white;
+}
