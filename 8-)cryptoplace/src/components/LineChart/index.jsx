@@ -3,8 +3,6 @@ import { Chart } from "react-google-charts";
 const LineChart = ({ historicalData }) => {
   const [data, setData] = useState([["Date", "Prices"]]);
 
-  console.log(historicalData);
-
   useEffect(() => {
     // Api'dan gelen veriyi google chart'ın istediği formata çevirdik.Chart bizden grafik çizebilmesi için 2 değer istiyor.Bunuda biz ilgili datayı dönüp elde ettik
     if (historicalData?.prices) {

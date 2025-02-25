@@ -35,7 +35,7 @@ const Detail = () => {
       .catch((err) => console.log(err));
   };
 
-  console.log(coinData);
+  console.log(historicalData);
 
   useEffect(() => {
     fetchCoinDetail();
@@ -56,12 +56,48 @@ const Detail = () => {
         </p>
       </div>
       {/* Chart */}
-      <div>
+      <div className="max-w-[700px] h-[300px] mx-auto shadow-md">
         <LineChart historicalData={historicalData} />
       </div>
 
       {/* Info */}
-      <div></div>
+      <div className="max-w-[700px] mx-auto my-12 flex flex-col bg-[#121236] p-6 rounded-lg shadow-md">
+        {[
+          { label: "Piyasa Sıralaması", value: coinData?.market_cap_rank },
+          {
+            label: "Güncel Fiyat",
+            value: `${currency.symbol}${coinData?.market_data.current_price[
+              currency.name
+            ].toLocaleString()}`,
+          },
+          {
+            label: "Piyasa Değeri",
+            value: `${currency.symbol}${coinData?.market_data.market_cap[
+              currency.name
+            ].toLocaleString()}`,
+          },
+          {
+            label: "24 Saatlik En Yüksek",
+            value: `${currency.symbol}${coinData?.market_data.high_24h[
+              currency.name
+            ].toLocaleString()}`,
+          },
+          {
+            label: "24 Saatlik En Düşük",
+            value: `${currency.symbol}${coinData?.market_data.low_24h[
+              currency.name
+            ].toLocaleString()}`,
+          },
+        ].map((item, key) => (
+          <ul
+            className="flex justify-between py-3 border-b border-[#5f5d5f]"
+            key={key}
+          >
+            <li className="font-semibold text-[#ffcc00]">{item.label} </li>
+            <li className="font-light">{item.value}</li>
+          </ul>
+        ))}
+      </div>
     </div>
   );
 };

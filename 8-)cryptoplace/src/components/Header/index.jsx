@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import { useContext } from "react";
 import { CoinContext } from "../../context/CoinContext";
-
+import { NavLink } from "react-router-dom";
 const Header = () => {
   const { setCurrency } = useContext(CoinContext);
   const currencyHandler = (e) => {
@@ -35,17 +35,24 @@ const Header = () => {
       {/* Nav */}
 
       <ul className="hidden md:flex gap-10 ml-[50px] lg:ml-0">
-        <li className="cursor-pointer hover:text-[#ffde4d] transition">Home</li>
+        <NavLink
+          to="/"
+          className="cursor-pointer hover:text-[#ffde4d] transition"
+        >
+          Home
+        </NavLink>
 
-        <li className="cursor-pointer hover:text-[#ffde4d] transition">
+        <NavLink className="cursor-pointer hover:text-[#ffde4d] transition">
           Features
-        </li>
+        </NavLink>
 
-        <li className="cursor-pointer hover:text-[#ffde4d] transition">
+        <NavLink className="cursor-pointer hover:text-[#ffde4d] transition">
           Pricing
-        </li>
+        </NavLink>
 
-        <li className="cursor-pointer hover:text-[#ffde4d] transition">Blog</li>
+        <NavLink className="cursor-pointer hover:text-[#ffde4d] transition">
+          Blog
+        </NavLink>
       </ul>
 
       {/* Select & Button */}
