@@ -3,6 +3,7 @@ const actionTypes = {
   delete: "DELETE",
   update: "UPDATE",
   toggle: "TOGGLE",
+  set: "SET",
 };
 
 export default actionTypes;

@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import actionTypes from "../../redux/actionTypes";
+import api from "../../utils/api";
+import { toast } from "react-toastify";
+import { updateTodo } from "../../redux/actions/actions";
 const Modal = ({ close, item }) => {
   const inputRef = useRef();
 
@@ -19,7 +22,16 @@ const Modal = ({ close, item }) => {
     };
 
     // Oluşturulan objeyi reducer'a ilet
-    dispatch({ type: actionTypes.update, payload: updatedTodo });
+
+    api
+      .patch(`/todos/${item.id}`, { text: newText })
+      .then(() => {
+        dispatch(updateTodo(updatedTodo));
+        toast.success("Güncelleme işlemi başarılı bir şekilde gerçekleşti");
+      })
+      .catch((err) => {
+        toast.error("Güncelleme işlemi sırasında bir hata oluştu");
+      });
 
     // Modal'ı kapat
     close();

@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
 import { v4 } from "uuid";
 import actionTypes from "../../redux/actionTypes";
+import api from "../../utils/api";
+import { toast } from "react-toastify";
+import { addTodo } from "../../redux/actions/actions";
 const Form = () => {
   // Dispatch kurulumu
   const dispatch = useDispatch();
@@ -22,9 +25,21 @@ const Form = () => {
       createdAt: new Date().getTime(),
     };
 
-    // Dispatch ile reducer'a aksiyon ilet
+    // api'a oluşturma isteği at
+    api
+      .post("/todos", newTodo)
+      .then(() => {
+        // Dispatch ile reducer'a aksiyon ilet
 
-    dispatch({ type: actionTypes.add, payload: newTodo });
+        dispatch(addTodo(newTodo));
+
+        // Kullanıcıya bildirim ilet
+        toast.success("Todo başarılı bir şekilde eklendi.");
+      })
+      .catch((err) => {
+        // Hata olduğunda kullanıcıya bildirim gönder
+        toast.error("Bir sorun oluştu !!");
+      });
 
     // Formu resetle
     e.target.reset();

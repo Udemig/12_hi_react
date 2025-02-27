@@ -2,11 +2,38 @@ import { useDispatch } from "react-redux";
 import Modal from "../Modal";
 import { useState } from "react";
 import actionTypes from "../../redux/actionTypes";
+import api from "../../utils/api";
+import { toast } from "react-toastify";
+import { changeTodoStatus, deleteTodo } from "../../redux/actions/actions";
 
 const Card = ({ item }) => {
   const [isShow, setIsShow] = useState(false);
 
-  console.log(isShow);
+  // Silme işlemi yapan fonksiyon
+  const handeleDelete = () => {
+    api
+      .delete(`/todos/${item.id}`)
+      .then(() => {
+        dispatch(deleteTodo(item.id));
+        toast.info("Silme işlemi başarıyla gerçekleşti");
+      })
+      .catch((err) => {
+        toast.error("Silme işlemi sırasında bir hata oluştu");
+      });
+  };
+
+  // is_done durumunu tersine çeviren fonksiyon
+  const handleStatus = () => {
+    api
+      .patch(`/todos/${item.id}`, { is_done: !item.is_done })
+      .then(() => {
+        dispatch(changeTodoStatus(item));
+        toast.success("İşlem başarılı bir şekilde gerçekleştirildi.");
+      })
+      .catch((err) => {
+        toast.error("İşlem gerçekleştirilemedi");
+      });
+  };
 
   // Dispatch kurulumu
   const dispatch = useDispatch();
@@ -23,21 +50,14 @@ const Card = ({ item }) => {
             Düzenle
           </button>
           <button
-            onClick={() =>
-              dispatch({ type: actionTypes.toggle, payload: item })
-            }
+            onClick={handleStatus}
             className={
               item.is_done ? "btn btn-secondary " : "btn btn btn-success"
             }
           >
             {item.is_done ? "Geri Al" : "Tamamla"}
           </button>
-          <button
-            onClick={() =>
-              dispatch({ type: actionTypes.delete, payload: item.id })
-            }
-            className="btn btn-danger"
-          >
+          <button onClick={handeleDelete} className="btn btn-danger">
             Sil
           </button>
         </div>
