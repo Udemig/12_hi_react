@@ -444,5 +444,33 @@
       "isPopular": false
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "daaa3bf6-7429-4827-9e5a-112d4413e71b",
+      "productId": "1",
+      "category": "Deniz Ürünleri",
+      "title": "Izgara Somon",
+      "price": 45.99,
+      "photo": "https://picsum.photos/200",
+      "amount": 10
+    },
+    {
+      "id": "2d7da449-348d-46cd-a034-879a843992f2",
+      "productId": "42",
+      "category": "Pizza",
+      "title": "Adana Kebap",
+      "price": 12.99,
+      "photo": "https://picsum.photos/211",
+      "amount": 6
+    },
+    {
+      "id": "570d4bd2-e894-4088-9106-a3ec3925c3e2",
+      "productId": "3",
+      "category": "Kebaplar",
+      "title": "Tavuk Kebabı",
+      "price": 17.99,
+      "photo": "https://picsum.photos/203",
+      "amount": 2
+    }
+  ]
 }

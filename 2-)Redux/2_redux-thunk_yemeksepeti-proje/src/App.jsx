@@ -6,13 +6,17 @@ import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import Cart from "./pages/Cart";
 import Header from "./components/Header";
+import { getCart } from "./redux/actions/basketAction";
 const App = () => {
   // Dispatch kurulumu yap
   const dispatch = useDispatch();
 
   // Sayfa yüklendiğinde thunk fonk. ile api'a istek at ve gelen verileri reducer'a ilet
   useEffect(() => {
+    // Restaurant verilerini alan fonk.
     dispatch(getRestaurants());
+    // Cart verilerini alan fonk.
+    dispatch(getCart());
   }, []);
 
   return (

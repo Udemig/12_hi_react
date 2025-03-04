@@ -11,8 +11,6 @@ const Home = () => {
     (state) => state.restaurantReducers
   );
 
-  console.log(restaurants);
-
   // Tekrar api isteği atan fonk.
   const retry = () => dispatch(getRestaurants());
 
