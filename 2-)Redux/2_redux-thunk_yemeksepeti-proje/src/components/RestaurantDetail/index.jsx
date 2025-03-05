@@ -4,9 +4,7 @@ import api from "../../utils/api";
 import Loader from "../Loader";
 import { FaArrowDown, FaClock, FaStar } from "react-icons/fa";
 
-const RestaurantDetail = () => {
-  // Url'deki parametreye eriş
-  const { id } = useParams();
+const RestaurantDetail = ({ id }) => {
   // Bileşen içerisinde verileri yönetmek için useState kurulumu yap
 
   const [restaurant, setRestaurant] = useState(null);
@@ -51,7 +49,7 @@ const RestaurantDetail = () => {
               </p>
             </div>
             <h1 className="text-2xl md:text-3xl font-semibold">
-              {restaurant.name}{" "}
+              {restaurant.name}
             </h1>
 
             <div className="flex items-center gap-2">

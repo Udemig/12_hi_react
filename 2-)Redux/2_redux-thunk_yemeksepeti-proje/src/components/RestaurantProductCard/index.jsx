@@ -14,14 +14,10 @@ const RestaurantProductCard = ({ item }) => {
 
   // handleAdd fonksiyonu çalıştığında eklenecek ürün sepette var mı bunu kontrol etmezsek her seferinde var olan ürünü tekrar tekrar ekler.
   // Bunu engellemek için sepette o ürün var mı bunu kontrol etmemiz gerek
-  const handleAdd = (e) => {
-    // Prevent default button behavior and page reload
-    e.preventDefault();
-
+  const handleAdd = () => {
     found
       ? dispatch(updateItem(found.id, found.amount + 1))
-      : // Sepete ürün ekleme işlemi
-        dispatch(createItem(item));
+      : dispatch(createItem(item));
   };
 
   return (
@@ -48,7 +44,8 @@ const RestaurantProductCard = ({ item }) => {
             onClick={handleAdd}
             className="absolute end-2 bottom-2 bg-white rounded-full size-8 grid place-items-center hover:bg-red-100"
           >
-            <FaPlus />
+            {/* Eğer sepette bu üründen varsa ürün miktarını render et yoksa ekle ikonunu render et */}
+            {found ? <span>{found.amount} </span> : <FaPlus />}
           </button>
         </div>
       </div>

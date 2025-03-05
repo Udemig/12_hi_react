@@ -33,7 +33,8 @@ const cartReducer = (state = initialState, { type, payload }) => {
 
     // Eleman sil
     case actionTypes.DELETE_ITEM:
-      return state;
+      const filtred = state.cart.filter((i) => i.id != payload);
+      return { ...state, cart: filtred };
 
     default:
       return state;

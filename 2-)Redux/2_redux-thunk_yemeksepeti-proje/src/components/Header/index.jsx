@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
   // useSelector ile reducer'daki state'lere eriş
   const { restaurants } = useSelector((state) => state.restaurantReducers);
+  const { cart } = useSelector((state) => state.cartReducer);
+
+  // Sepetteki toplam ürün miktarını hesapla
+  const totalAmount = cart.reduce((total, i) => total + i.amount, 0);
 
   return (
     <header className="shadow">
@@ -40,7 +44,7 @@ const Header = () => {
             className="flex items-center gap-2 py-2 px-3 hover:bg-red-100 rounded-full"
           >
             <BsBasket />
-            <span>10</span>
+            <span>{totalAmount}</span>
           </Link>
         </div>
       </div>
