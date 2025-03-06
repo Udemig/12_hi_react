@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../../../utils";
 import { Link } from "react-router-dom";
 import imageUrl from "../../../constants";
+import AddButton from "../../../components/AddButton";
 
 const Hero = () => {
   const [movie, setMovie] = useState(null);
@@ -21,8 +22,6 @@ const Hero = () => {
       })
       .catch((err) => setError(err.message));
   }, []);
-
-  console.log(movie);
 
   return (
     <div>
@@ -50,7 +49,7 @@ const Hero = () => {
               >
                 Film İzle
               </Link>
-              <button>Listeye Ekle</button>
+              <AddButton movie={movie} />
             </div>
           </div>
 

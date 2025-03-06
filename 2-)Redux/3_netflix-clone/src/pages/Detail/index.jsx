@@ -5,6 +5,10 @@ import Banner from "./Banner";
 import api from "../../utils";
 import Error from "../../components/Error";
 import Loader from "../../components/Loader";
+import Content from "./Content";
+import ActorList from "./ActorList";
+import VideoList from "./VideoList";
+import AddButton from "../../components/AddButton";
 
 const Detail = () => {
   // Url'deki parametreye eriş
@@ -14,22 +18,14 @@ const Detail = () => {
   const [error, setError] = useState(null);
   const [movie, setMovie] = useState(null);
 
-  console.log(id);
-
   useEffect(() => {
-    const params = {
-      append_to_response: "videos,credits",
-      language: "tr",
-    };
     api
-      .get(`/movie/${id}`, params)
+      .get(`/movie/${id}`)
       .then((res) => {
         setMovie(res.data);
       })
       .catch((err) => setError(err.message));
   }, []);
-
-  console.log(movie);
 
   return (
     <>
@@ -50,7 +46,7 @@ const Detail = () => {
               <span>Geri</span>
             </Link>
 
-            <button>Listeye Ekle</button>
+            <AddButton movie={movie} />
           </div>
 
           {/* Banner */}
@@ -59,9 +55,14 @@ const Detail = () => {
 
           {/* Content */}
 
+          <Content movie={movie} />
+
           {/* Actor List */}
 
+          <ActorList id={id} />
+
           {/* Video List */}
+          <VideoList id={id} />
         </div>
       )}
     </>

@@ -12,6 +12,8 @@
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@splidejs/splide-extension-video": "^0.8.0",
     "@tailwindcss/vite": "^4.0.10",
     "axios": "^1.8.1",
     "millify": "^6.1.0",
