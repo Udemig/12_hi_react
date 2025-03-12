@@ -1,0 +1,15 @@
+.home-page {
+  padding: 20px;
+
+  @media (min-width: 768px) {
+    padding: 20px 40px;
+  }
+
+  // Cards Wrapper
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin-top: 50px;
+    gap: 50px;
+  }
+}

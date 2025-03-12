@@ -1,0 +1,116 @@
+.card {
+  background-color: #71797e;
+  padding: 20px;
+  border-radius: 20px;
+
+  // Head
+  .head {
+    display: flex;
+    justify-content: space-between;
+
+    .letter {
+      background-color: #831483;
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    .info {
+      flex: 1;
+      margin-left: 40px;
+      font-size: 19px;
+
+      p:last-child {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Body
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 10px;
+    margin-top: 20px;
+
+    // Field
+    .field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status {
+      display: flex;
+
+      p {
+        padding: 6px;
+        border-radius: 6px;
+        background-color: green;
+      }
+    }
+  }
+}
+
+// Button Css
+
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 2px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.bin-bottom {
+  width: 10px;
+  z-index: 2;
+}
+.bin-top {
+  width: 13px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}
+.garbage {
+  position: absolute;
+  width: 14px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.bin-button:hover .garbage {
+  animation: throw 0.4s linear;
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}

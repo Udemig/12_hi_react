@@ -1,0 +1,157 @@
+{
+  "jobs": [
+    {
+      "position": "Data Analyst",
+      "company": "Coca Cola",
+      "location": "Menlo Park, ABD",
+      "status": "Devam Ediyor",
+      "type": "Uzaktan",
+      "date": 1714602002418,
+      "id": "a1b2c3d4"
+    },
+    {
+      "position": "Product Manager",
+      "company": "Udemig",
+      "location": "Redmond, ABD",
+      "status": "Reddedildi",
+      "type": "Yarı Zamanlı",
+      "date": 1712607002328,
+      "id": "e5f6g7h8"
+    },
+    {
+      "position": "Product Manager",
+      "company": "IBM",
+      "location": "Redmond, ABD",
+      "status": "Devam Ediyor",
+      "type": "Yarı Zamanlı",
+      "date": 1716607002428,
+      "id": "i9j1k2l3"
+    },
+    {
+      "position": "Marketing Manager",
+      "company": "Microsoft",
+      "location": "Seattle, ABD",
+      "status": "Reddedildi",
+      "type": "Yarı Zamanlı",
+      "date": 1318607013502,
+      "id": "m4n5o6p7"
+    },
+    {
+      "position": "Data Scientist",
+      "company": "Microsoft",
+      "location": "Menlo Park, ABD",
+      "status": "Devam Ediyor",
+      "type": "Yarı Zamanlı",
+      "date": 1715607078538,
+      "id": "q8r9s1t2"
+    },
+    {
+      "position": "Data Scientist",
+      "company": "Microsoft",
+      "location": "Menlo Park, ABD",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "date": 1712608152577,
+      "id": "u3v4w5x6"
+    },
+    {
+      "position": "Marketing Manager",
+      "company": "Udemig",
+      "location": "İstanbul, Türkiye",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "date": 1720550896851,
+      "id": "y7z8a9b1"
+    },
+    {
+      "position": "Data Analyst",
+      "company": "Mimcode",
+      "location": "İstanbul, Türkiye",
+      "status": "Reddedildi",
+      "type": "Yarı Zamanlı",
+      "date": 1720552344626,
+      "id": "c2d3e4f5"
+    },
+    {
+      "position": "Data Analyst",
+      "company": "Mimcode",
+      "location": "Ankara, Türkiye",
+      "status": "Reddedildi",
+      "type": "Yarı Zamanlı",
+      "date": 1720552364242,
+      "id": "g6h7i8j9"
+    },
+    {
+      "position": "Marketing Manager",
+      "company": "Udemig",
+      "location": "İzmir, Türkiye",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "date": 1720552656225,
+      "id": "k1l2m3n4"
+    },
+    {
+      "position": "Marketing Manager",
+      "company": "Udemig",
+      "location": "Antalya, Türkiye",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "date": 1720632154668,
+      "id": "o5p6q7r8"
+    },
+    {
+      "position": "Tester",
+      "company": "Amazon",
+      "location": "İstanbul, Türkiye",
+      "status": "Devam Ediyor",
+      "type": "Tam Zamanlı",
+      "date": 1733337378857,
+      "id": "s9t1u2v3"
+    },
+    {
+      "position": "Tester",
+      "company": "Zustand",
+      "location": "Ankara, Türkiye",
+      "status": "Devam Ediyor",
+      "type": "Tam Zamanlı",
+      "date": 1733337384700,
+      "id": "w4x5y6z7"
+    },
+    {
+      "position": "Frontend Developer",
+      "company": "Udemig",
+      "location": "İstanbul, Türkiye",
+      "status": "Devam Ediyor",
+      "type": "Uzaktan",
+      "date": 1741804953944,
+      "id": "a8b9c1d2"
+    },
+    {
+      "position": "Backend Developer",
+      "company": "Mimcode",
+      "location": "Malatya, Türkiye",
+      "status": "Mülakat",
+      "type": "Uzaktan",
+      "date": 1741805011877,
+      "id": "e3f4g5h6"
+    },
+    {
+      "position": "FullStack Developer",
+      "company": "Didiyos",
+      "location": "Malatya",
+      "status": "Reddedildi",
+      "type": "Tam Zamanlı",
+      "date": 1741811469944,
+      "id": "niHDF5s"
+    },
+    {
+      "position": "FullStack Developer",
+      "company": "Didiyos",
+      "location": "Malatya",
+      "status": "Reddedildi",
+      "type": "Tam Zamanlı",
+      "date": 1741811472012,
+      "id": "-Ds2mVg"
+    }
+  ]
+}

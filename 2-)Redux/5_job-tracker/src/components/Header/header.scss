@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 20px 40px;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: #e244a0;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .active {
+      text-shadow: 0 0 20px rgba(255, 192, 203, 0.8);
+    }
+  }
+}
