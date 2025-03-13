@@ -23,9 +23,11 @@ const Home = () => {
         <Error info={error} />
       ) : (
         <div className="cards-wrapper">
-          {jobs.map((job) => (
-            <Card key={job.id} job={job} />
-          ))}
+          {jobs.length === 0 ? (
+            <p className="warn">Aranılan Kriterlere Uygun Başvuru Bulunamadı</p>
+          ) : (
+            jobs.map((job) => <Card key={job.id} job={job} />)
+          )}
         </div>
       )}
     </div>

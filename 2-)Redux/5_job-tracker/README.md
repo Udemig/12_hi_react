@@ -1,12 +1,11 @@
-# React + Vite
+# Debounce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Debounce, bir işlemin belirli bir süre boyunca tekrar tekrar tetiklenmesini önleyerek yalnızca son çağrıyı çalıştıran bir tekniktir. Genellikle hızlı bir şekilde tetiklenen olayları (örneğin, klavyeye yazma, pencere boyutlandırma veya fare hareketleri) optimize etmek için kullanılır.
 
-Currently, two official plugins are available:
+### 📌 Nasıl Çalışır?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Belirli bir süre belirlenir (örneğin, 300ms).
+  Fonksiyon çağrıldığında bir zamanlayıcı başlatılır.
+  Eğer belirlenen süre içinde fonksiyon tekrar çağrılırsa, önceki çağrı iptal edilir ve zamanlayıcı yeniden başlatılır.
+  Ancak belirlenen süre dolarsa, fonksiyon çalıştırılır.
+  Bu sayede gereksiz hesaplamaların veya ağ isteklerinin önüne geçilir.
