@@ -8,11 +8,11 @@ const Head = ({ info }) => {
   return (
     <div className="head">
       <div>
-        <h3 title="Çağrı İşareti">{c(info.identification?.callsign)}</h3>
+        <h3 title="Çağrı İşareti">{c(info?.identification?.callsign)}</h3>
 
-        <span title="Uçuş Numarası">{c(info.identification?.number?.default)}</span>
+        <span title="Uçuş Numarası">{c(info?.identification?.number?.default)}</span>
 
-        <span title="Uçak IATA/ICAO tip kodu">{c(info.aircraft?.model?.code)}</span>
+        <span title="Uçak IATA/ICAO tip kodu">{c(info?.aircraft?.model?.code)}</span>
       </div>
 
       <button onClick={() => dispatch(close())}>X</button>

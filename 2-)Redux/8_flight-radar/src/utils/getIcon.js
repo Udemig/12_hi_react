@@ -1,6 +1,6 @@
 import { divIcon } from "leaflet";
 
-const getIcon = (deg) => {
+export const getIcon = (deg, isActive, isDetail) => {
   return divIcon({
     html: `<div style="color:red;transform: rotate(${deg - 45}deg)">
  <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +24,17 @@ fill="#000000" stroke="none">
 </svg>
 
      </div>`,
-    className: "marker",
+    className: `marker  ${isDetail && "passive"} ${isActive && "active-flight"}`,
     iconSize: [30, 30],
   });
 };
 
-export default getIcon;
+export const getAirportIcon = (isRed) => {
+  return divIcon({
+    html: `<div style='background:${
+      isRed ? "red" : "#535bf2"
+    } ; width:25px; height:25px; border-radius:50%; border: 2px solid white;'></div>`,
+    className: "",
+    iconSize: [25, 25],
+  });
+};

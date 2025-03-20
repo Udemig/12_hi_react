@@ -1,5 +1,11 @@
 const Loader = () => {
-  return <div>Loader</div>;
+  return (
+    <div className="wrapper">
+      <div class="loader">
+        <span></span>
+      </div>
+    </div>
+  );
 };
 
 export default Loader;

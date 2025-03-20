@@ -30,10 +30,13 @@ const Modal = () => {
           ) : (
             info && (
               <div className="info-wrapper">
-                <div>
-                  <Gallery data={info.aircraft.images} />
-                  <Airport data={info.airport} />
-                  <Time data={info.time} />
+                <div className="info-box">
+                  <div>
+                    <Gallery data={info.aircraft.images} />
+                    <Airport data={info.airport} />
+                    <Time data={info.time} />
+                  </div>
+
                   <Aircraft data={info.aircraft} />
                 </div>
               </div>
