@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+/* Eskiden tailwind config üzerinden yapılan konfigrasyonları burda tanımlıyoruz */
+@theme {
+  --font-sans: "Poppins", "sans-serif";
+  --font-play: "Playwrite IN", "sans-serif";
+  --color-grey: #242424;
+}
+
+/* Temel elementleri stillendirme */
+@layer base {
+  body {
+    @apply bg-grey text-white min-h-screen;
+  }
+}
+
+/* Kendi class'larımızı tanımlama */
+@layer components {
+  .wrapper {
+    @apply h-screen w-full grid place-items-center;
+  }
+
+  .box {
+    @apply bg-white text-grey p-[50px_60px] rounded-[10px] w-[80vw] max-w-[500px];
+  }
+
+  .btn {
+    @apply p-2 px-4 rounded-md shadow-lg border border-gray-300 hover:bg-gray-100 hover:brightness-90 transition cursor-pointer;
+  }
+}
