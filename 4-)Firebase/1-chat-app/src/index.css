@@ -28,4 +28,10 @@
   .btn {
     @apply p-2 px-4 rounded-md shadow-lg border border-gray-300 hover:bg-gray-100 hover:brightness-90 transition cursor-pointer;
   }
+
+  .message {
+    padding: 2px 8px;
+    max-width: 90%;
+    width: fit-content;
+  }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import EmojiPicker from "emoji-picker-react";
@@ -6,9 +6,32 @@ import EmojiPicker from "emoji-picker-react";
 const Form = ({ user, room }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [text, setText] = useState("");
+  const emojiPickerRef = useRef(null);
+  const buttonRef = useRef(null);
 
+  // emoji picker alanının dışarısına tıklanınca modalı kapat
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        isOpen &&
+        emojiPickerRef.current &&
+        !emojiPickerRef.current.contains(e.target) &&
+        !buttonRef.current.contains(e.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
+  // form gönderilince
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // formu temizle
+    setText("");
+    setIsOpen(false);
 
     // mesajın kaydedileceği kolleksiyonun referansını al
     const collectionRef = collection(db, "messages");
@@ -24,9 +47,22 @@ const Form = ({ user, room }) => {
       },
       createdAt: serverTimestamp(),
     });
+  };
 
-    // formu temizle
-    setText("");
+  // inputtaki seçili alana emoji ekle
+  const handleEmojiClick = (e) => {
+    const input = document.querySelector("input[type='text']");
+
+    if (input) {
+      // inputta seçili karakterlerin başlangıç sırası
+      const start = input.selectionStart;
+      // inputta seçili karakterlerin bitiş sırası
+      const end = input.selectionEnd;
+      // seçili alana emojiyi ekle
+      const newText = text.substring(0, start) + e.emoji + text.substring(end);
+      // state'i güncelle
+      setText(newText);
+    }
   };
 
   return (
@@ -40,11 +76,13 @@ const Form = ({ user, room }) => {
       />
 
       <div className="relative">
-        <div className="absolute top-[-470px] right-[-140px]">
-          <EmojiPicker open={isOpen} onEmojiClick={(e) => setText(text + e.emoji)} />
-        </div>
+        {isOpen && (
+          <div className="absolute top-[-470px] right-[-140px]" ref={emojiPickerRef}>
+            <EmojiPicker open={isOpen} onEmojiClick={handleEmojiClick} />
+          </div>
+        )}
 
-        <button type="button" className="btn text-base" onClick={() => setIsOpen(!isOpen)}>
+        <button ref={buttonRef} type="button" className="btn text-base" onClick={() => setIsOpen(!isOpen)}>
           😂
         </button>
       </div>

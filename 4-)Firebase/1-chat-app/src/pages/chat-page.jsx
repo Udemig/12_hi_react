@@ -12,7 +12,7 @@ const ChatPage = () => {
       <div className="bg-white text-grey w-full md:w-[80vw] md:max-w-[600px] h-screen md:h-[80vh] md:rounded-md overflow-hidden flex flex-col">
         <Header user={user} room={room} />
 
-        <List />
+        <List room={room} />
 
         <Form user={user} room={room} />
       </div>
