@@ -1,10 +1,10 @@
-const Loader = () => {
+const Loader = ({ designs }) => {
   return (
     <div className="text-center">
       <div role="status">
         <svg
           aria-hidden="true"
-          className="inline size-5 animate-spin text-white fill-blue-600"
+          className={`inline size-5 animate-spin text-white fill-blue-600 ${designs}`}
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

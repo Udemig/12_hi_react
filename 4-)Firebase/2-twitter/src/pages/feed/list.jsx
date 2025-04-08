@@ -1,6 +1,8 @@
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase";
+import Loader from "../../components/loader";
+import Post from "../../components/post";
 
 const List = () => {
   const [tweets, setTweets] = useState(null);
@@ -25,7 +27,7 @@ const List = () => {
     return () => unsub();
   }, []);
 
-  return <div>List</div>;
+  return !tweets ? <Loader designs="!size-7 my-40" /> : tweets.map((tweet) => <Post key={tweet.id} tweet={tweet} />);
 };
 
 export default List;
