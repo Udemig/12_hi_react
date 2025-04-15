@@ -12,4 +12,21 @@ const totalData = {
   fatality_rate: 0.0101,
 };
 
-export { totalData };
+const mockData = {
+  continent: "Asia",
+  country: "Türkiye",
+  capital: "Ankara",
+  currency: "Turkish lira",
+  date: "2025-04-15",
+  cases: 17232066,
+  deaths: 102174,
+  tests: 162743369,
+  population: 84339067,
+  flag: {
+    png: "https://flagcdn.com/w320/tr.png",
+    svg: "https://flagcdn.com/tr.svg",
+    alt: "The flag of Turkey has a red field bearing a large fly-side facing white crescent and a smaller five-pointed white star placed just outside the crescent opening. The white crescent and star are offset slightly towards the hoist side of center.",
+  },
+};
+
+export { totalData, mockData };
