@@ -21,6 +21,7 @@
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
     "react-testing-library": "^8.0.1",
+    "react-toastify": "^11.0.5",
     "redux-mock-store": "^1.5.5"
   },
   "devDependencies": {

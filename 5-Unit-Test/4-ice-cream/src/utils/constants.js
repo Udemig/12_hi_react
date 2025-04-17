@@ -1,3 +1,5 @@
+const mockCartData = [{ name: "Çikolata" }, { name: "Vanilya" }, { name: "Çilek" }];
+
 const mockData = [
   {
     name: "Bal Badem",
@@ -37,4 +39,4 @@ const mockData = [
   },
 ];
 
-export { mockData };
+export { mockData, mockCartData };
