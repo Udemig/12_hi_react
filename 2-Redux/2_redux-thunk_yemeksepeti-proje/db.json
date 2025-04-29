@@ -451,7 +451,7 @@
       "title": "Izgara Somon",
       "price": 45.99,
       "photo": "https://picsum.photos/200",
-      "amount": 15
+      "amount": 16
     },
     {
       "id": "8978386d-7044-4140-a006-27f649705eb9",
@@ -459,7 +459,7 @@
       "title": "Tavuk Kebabı",
       "price": 17.99,
       "photo": "https://picsum.photos/203",
-      "amount": 9
+      "amount": 8
     }
   ]
 }
