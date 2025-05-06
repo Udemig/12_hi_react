@@ -1,7 +1,8 @@
+import { FC } from "react";
 import Button from "../button";
 import { motion } from "motion/react";
 
-const Hero = () => {
+const Hero: FC = () => {
   return (
     <div className="hero">
       <div className="pt-14 padding-x flex-1 max-h-[920px]">

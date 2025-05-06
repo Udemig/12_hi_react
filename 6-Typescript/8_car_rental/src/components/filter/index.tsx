@@ -1,7 +1,8 @@
+import { FC } from "react";
 import Searchbar from "./searchbar";
 import Year from "./year";
 
-const Filter = () => {
+const Filter: FC = () => {
   return (
     <div className="mt-12 padding-x padding-y max-width">
       <div className="home-text-container">

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Button from "../button";
+import { FC } from "react";
 
-const Header = () => {
+const Header: FC = () => {
   return (
     <header className="w-full z-10">
       <div className="max-width flex-between padding-x padding-y">
