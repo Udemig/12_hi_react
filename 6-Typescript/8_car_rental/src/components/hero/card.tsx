@@ -28,7 +28,11 @@ const Card: FC<Props> = ({ car }) => {
 
       {/* araç resmi */}
       <div>
-        <img src={generateImage(car)} className="w-full h-full object-contain min-h-[200px]" />
+        <img
+          src={generateImage(car)}
+          className="w-full h-full object-contain min-h-[200px]"
+          alt={car.make + " " + car.model}
+        />
       </div>
 
       {/* temel bilgiler */}
@@ -38,7 +42,12 @@ const Card: FC<Props> = ({ car }) => {
         </div>
 
         <motion.div initial={{ scale: 0.5 }} whileInView={{ scale: 1 }} className="hidden group-hover:block">
-          <Button text="Daha Fazla" designs="w-full text-white mt-[0.5px]" fn={() => setIsOpen(true)} />
+          <Button
+            name="daha fazla"
+            text="Daha Fazla"
+            designs="w-full text-white mt-[0.5px]"
+            fn={() => setIsOpen(true)}
+          />
         </motion.div>
       </div>
 

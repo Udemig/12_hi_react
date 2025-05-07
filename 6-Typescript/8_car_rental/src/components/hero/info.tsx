@@ -46,7 +46,7 @@ const Info: FC<Props> = ({ car }) => {
           key={key}
           className="flex-center flex-col"
         >
-          <img src={icon} className="size-[25px]" />
+          <img src={icon} alt="icon" className="size-[25px]" />
           <p className="text-center">{text}</p>
         </motion.div>
       ))}

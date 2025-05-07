@@ -26,7 +26,8 @@ const Hero: FC = () => {
           }}
           transition={{ duration: 0.5 }}
           src="/hero.png"
-          className="object-contain"
+          alt="gray bmw m3 station wagon"
+          className="object-contain xl:w-[600px] xl:h-[477.5]"
         />
       </div>
     </div>

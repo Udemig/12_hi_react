@@ -20,18 +20,23 @@ const Year: FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
-      <label>Yıl</label>
+      <label htmlFor="year">Yıl</label>
 
       <div className="flex">
         <input
+          id="year"
           value={year}
+          name="year"
           type="number"
           placeholder="örn:2025"
           onChange={(e) => setYear(e.target.value)}
           className="w-28 py-[6px] px-2 rounded-l-[4px] shadow text-black bg-white border-r border-zinc-200"
         />
 
-        <button className="bg-white rounded-r text-blue-500 hover:bg-zinc-200 transition cursor-pointer px-3">
+        <button
+          name="ara"
+          className="bg-white rounded-r text-blue-500 hover:bg-zinc-200 transition cursor-pointer px-3"
+        >
           🔎
         </button>
       </div>

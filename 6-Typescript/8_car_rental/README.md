@@ -58,5 +58,44 @@
 
 # Deploy (Yayınlama)
 
-- Projenin geliştirme ortamında canlı (prod) ortamına aktarma süreci
+- Projenin geliştirme ortamından canlı (prod) ortamına aktarma süreci
 - Örnek: Github'daki kodun Vercel üzerinden yayınlaması
+
+# Domain (Alan Adı)
+
+- Kullanıcıların, web sitesine ulaşmak için tarayıcıya yazdığı isimdir.
+- Projeyi deploy edip bir hosting sunucusna yüklediğimizde projeye bir ip (192.168.23.45) adresi üzerinden erişlebiblir.
+- Bu ip adresi akılda kalıcı olmadığından ve insanlrın aratmıycağından dolayı daha akılda kalıcı ve kelimelerden oluşan adresleri tercih ederiz.
+- Bu noktada kendimize bir domain adresi (alan adı) kiralamamız gerekir.
+
+- Godaddy
+- Namecheap
+- İsimtescil
+- Natro
+
+# Domain Name System
+
+- Domain adersinin doğru IP adresine yönlendiren sistemdir
+- kiralican.com ===> 192.168.23.45
+
+# SEO
+
+- Search Engine Optimization (Arama Motoru Optimizasyonu)
+- Site içeriğini arama motorlarına uygun hale getirip sitenin seo'sunu arttırarak üst sıralarda çıkmasını sağlayabiliyoruz.
+- SEO etki eden bir çok faktör var:
+
+1. Site İçeriği (anahtar kelimeler) (h1,p,b,semantik etikler)
+2. Resimlerin Alt Niteliği
+3. Butonların İsimlerini (name) Yaz
+4. Zengin bir Title İçeriği Yaz
+5. Meta Etikleri (Keyword,Description,Author)
+6. Sitemap.xml + robots.txt dosyalarını oluştur
+7. Inputları Label'ları ile bağla
+8. 404 Sayfası Oluştur
+9. Site içerisi yönlendirmeleri yap. Url'leri seo'ya uygun yap
+10. Sosyal medya hesaplarını oluştur ve bağla (opengraph)
+
+# Keyword Kontrolü
+
+- Keyword'leri belirlerken kullanıcıların sık arattığı ve aynı zamanda rekabitin çok yüsek olmadıüı keywordleri seçersek ilk sayfada çıkma olasılığımız artar.
+- Keyword kontrolü için: `https://www.semrush.com/analytics/keywordmagic/` vb siteler kullanılabilir.

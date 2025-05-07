@@ -1,4 +1,6 @@
-const Loader = () => {
+import { FC } from "react";
+
+const Loader: FC = () => {
   return (
     <div className="text-center">
       <div role="status">

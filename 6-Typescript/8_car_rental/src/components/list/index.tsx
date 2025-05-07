@@ -68,7 +68,10 @@ const List = () => {
           onPageChange={(e) => {
             searchParams.set("page", String(e.selected + 1));
             setSeatchParams(searchParams);
-            firstCard.current?.scrollIntoView();
+
+            if (page !== "1") {
+              firstCard.current?.scrollIntoView();
+            }
           }}
           pageRangeDisplayed={5}
           pageCount={Math.ceil(total / 10)}

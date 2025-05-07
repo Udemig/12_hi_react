@@ -27,8 +27,12 @@ const Modal: FC<Props> = ({ car, close, isOpen }) => {
             }}
             className="bg-white p-6 relative max-w-xl max-h-[90vh] rounded-2xl flex flex-col gap-5 shadow-xl overflow-auto w-[95%]  sm:min-w-[576px] min-h-[70vh]"
           >
-            <button onClick={close} className="cursor-pointer p-1 absolute end-1 top-1 z-10 bg-white rounded-full">
-              <img src="/close.svg" />
+            <button
+              name="kapat"
+              onClick={close}
+              className="cursor-pointer p-1 absolute end-1 top-1 z-10 bg-white rounded-full"
+            >
+              <img src="/close.svg" alt="kapat" />
             </button>
 
             {/* Fotoğraflar */}

@@ -23,11 +23,6 @@ export const fetchCars = async (make: string, model: string, year: string, page:
     url += `&refine=year:"${year}"`;
   }
 
-  // eğer yıl filtresi varsa, istek atılan url'e ekle
-  if (year) {
-    url += `&refine=year:"${year}"`;
-  }
-
   // page   1    2   3   4    5
   // limit  10   10  10  10   10
   // offset 0    10  20  30   40

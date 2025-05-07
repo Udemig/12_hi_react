@@ -39,8 +39,10 @@ const Searchbar: FC = () => {
     <form onSubmit={handleSubmit} className="searchbar flex gap-3 items-center justify-center">
       <div className="searchbar-item items-end">
         <div className="w-full flex flex-col">
-          <label>Marka</label>
+          <label htmlFor="make">Marka</label>
           <ReactSelect
+            isClearable
+            inputId="make"
             value={{ label: make, value: make }}
             onChange={(option) => {
               setMake(option?.value as string);
@@ -51,29 +53,31 @@ const Searchbar: FC = () => {
           />
         </div>
 
-        <button type="submit" className="ml-3 sm:hidden cursor-pointer">
-          <img src="/search.svg" className="size-[40px]" />
+        <button name="ara" type="submit" className="ml-3 sm:hidden cursor-pointer">
+          <img src="/search.svg" className="size-[40px]" alt="ara" />
         </button>
       </div>
 
       <div className="searchbar-item flex flex-col items-start">
-        <label>Model</label>
+        <label htmlFor="model">Model</label>
 
         <div className="w-full flex">
           <div className="absolute ml-3 mt-1">
-            <img src="/model-icon.png" className="size-[25px]" />
+            <img src="/model-icon.png" className="size-[25px]" alt="gri araba silüeti" />
           </div>
 
           <input
             value={model as string}
             onChange={(e) => setModel(e.target.value)}
+            id="model"
             type="text"
+            name="model"
             placeholder="Model Yazınız.."
             className="searchbar-input rounded text-black bg-white"
           />
 
-          <button type="submit" className="ml-3  cursor-pointer">
-            <img src="/search.svg" className="size-[40px]" />
+          <button name="ara" type="submit" className="ml-3  cursor-pointer">
+            <img src="/search.svg" className="size-[40px]" alt="ara" />
           </button>
         </div>
       </div>
