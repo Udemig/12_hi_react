@@ -1,0 +1,163 @@
+/* SimpleMDE Markdown Editör Stilleri */
+.markdown-editor .EasyMDEContainer {
+  border-radius: var(--radius-md) !important;
+  overflow: hidden;
+}
+
+.markdown-editor .CodeMirror {
+  border-radius: var(--radius-md) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+  background-color: var(--color-card) !important;
+  font-family: var(--font-family) !important;
+  transition: var(--transition-normal);
+  padding: 0.5rem !important;
+}
+
+.markdown-editor .CodeMirror-focused {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+.markdown-editor .editor-toolbar {
+  border-color: var(--color-border) !important;
+  background-color: var(--color-card) !important;
+  color: var(--color-text-primary) !important;
+  opacity: 1 !important;
+  border-top-left-radius: var(--radius-md) !important;
+  border-top-right-radius: var(--radius-md) !important;
+  padding: 0.25rem !important;
+}
+
+.markdown-editor .editor-toolbar button {
+  color: var(--color-text-secondary) !important;
+  border-radius: var(--radius-sm) !important;
+  margin: 0.125rem !important;
+  transition: var(--transition-normal);
+}
+
+.markdown-editor .editor-toolbar button:hover,
+.markdown-editor .editor-toolbar button.active {
+  color: var(--color-primary) !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.markdown-editor .editor-toolbar i.separator {
+  border-color: var(--color-border) !important;
+  margin: 0 0.25rem !important;
+}
+
+/* Koyu Tema İçin SimpleMDE Stilleri */
+@media (prefers-color-scheme: dark) {
+  .markdown-editor .editor-toolbar::before,
+  .markdown-editor .editor-toolbar::after {
+    display: none !important;
+  }
+
+  .markdown-editor .CodeMirror-cursor {
+    border-color: var(--color-text-primary) !important;
+  }
+}
+
+/* SimpleMDE Preview (Önizleme) Stilleri */
+.editor-preview,
+.editor-preview-side {
+  background-color: var(--color-background) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+  padding: 1rem !important;
+}
+
+.editor-preview-side {
+  border-left: 1px solid var(--color-border) !important;
+}
+
+/* Markdown Biçimlendirme Stilleri */
+.editor-preview h1,
+.editor-preview h2,
+.editor-preview h3,
+.editor-preview h4,
+.editor-preview-side h1,
+.editor-preview-side h2,
+.editor-preview-side h3,
+.editor-preview-side h4 {
+  color: var(--color-text-primary) !important;
+  font-weight: 600 !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.editor-preview h1,
+.editor-preview-side h1 {
+  font-size: 1.75rem !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.editor-preview h2,
+.editor-preview-side h2 {
+  font-size: 1.5rem !important;
+}
+
+.editor-preview h3,
+.editor-preview-side h3 {
+  font-size: 1.25rem !important;
+}
+
+.editor-preview p,
+.editor-preview-side p {
+  margin-bottom: 1rem !important;
+  line-height: 1.7 !important;
+}
+
+.editor-preview a,
+.editor-preview-side a {
+  color: var(--color-primary) !important;
+  text-decoration: underline !important;
+}
+
+.editor-preview code,
+.editor-preview-side code {
+  background-color: rgba(128, 128, 128, 0.1) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0.2rem 0.4rem !important;
+  font-size: 0.875em !important;
+}
+
+.editor-preview pre,
+.editor-preview-side pre {
+  background-color: var(--color-card) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+  overflow-x: auto !important;
+}
+
+.editor-preview pre code,
+.editor-preview-side pre code {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.editor-preview table,
+.editor-preview-side table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 1rem 0 !important;
+}
+
+.editor-preview table td,
+.editor-preview table th,
+.editor-preview-side table td,
+.editor-preview-side table th {
+  border: 1px solid var(--color-border) !important;
+  padding: 0.5rem !important;
+}
+
+.editor-preview table th,
+.editor-preview-side table th {
+  background-color: rgba(128, 128, 128, 0.1) !important;
+  font-weight: 600 !important;
+}
