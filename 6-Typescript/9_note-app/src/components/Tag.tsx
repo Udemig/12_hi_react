@@ -22,10 +22,8 @@ const Tag: React.FC<TagProps> = ({
 
   // Varyant sınıflarını belirle
   const variantClasses = {
-    default:
-      "bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-primary)]",
-    outlined:
-      "border border-[var(--color-primary)] text-[var(--color-primary)]",
+    default: "bg-[var(--color-primary)] bg-opacity-10 text-white",
+    outlined: "border border-[var(--color-primary)] text-white",
     filled: "bg-[var(--color-primary)] text-white",
   };
 

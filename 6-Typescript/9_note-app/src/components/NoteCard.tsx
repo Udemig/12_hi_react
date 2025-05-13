@@ -33,10 +33,10 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, delay = 0 }) => {
     >
       {/* Başlık ve Tarih */}
       <div className="flex justify-between items-start mb-3">
-        <h3 className="text-lg font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-all">
+        <h3 className="text-lg font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-all line-clamp-1">
           {note.title}
         </h3>
-        <span className="text-xs text-[var(--color-text-secondary)] bg-[var(--color-background)] px-2 py-1 rounded-full">
+        <span className="text-nowrap text-xs text-[var(--color-text-secondary)] bg-[var(--color-background)] px-2 py-1 rounded-full">
           {formattedDate}
         </span>
       </div>
@@ -57,7 +57,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, delay = 0 }) => {
 
       {/* Okuma Süresi / Bilgi Rozeti */}
       <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-        <span className="inline-flex items-center bg-[var(--color-accent)] bg-opacity-10 text-[var(--color-accent)] text-xs px-2 py-1 rounded-full">
+        <span className="inline-flex items-center bg-[var(--color-accent)] bg-opacity-10 text-white text-xs px-2 py-1 rounded-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-3 w-3 mr-1"
