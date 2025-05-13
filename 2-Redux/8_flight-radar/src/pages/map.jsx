@@ -14,10 +14,7 @@ const Map = () => {
 
   // Canlı Veri akışı için her saniye başında veriyi çek
   useEffect(() => {
-    const id = setInterval(() => dispatch(getFlights()), 3000);
-
-    // componentWillUnmout: map sayfasınan çıkınca interval durmalı
-    return () => clearInterval(id);
+    dispatch(getFlights());
   }, []);
 
   return (
