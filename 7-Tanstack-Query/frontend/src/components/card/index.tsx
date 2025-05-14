@@ -43,7 +43,7 @@ const Card: FC<Props> = ({ place }) => {
               </span>
             ))}
           </div>
-          <Rating />
+          <Rating rating={place.rating} />
         </div>
 
         {/* Fiyat Bilgisi */}
