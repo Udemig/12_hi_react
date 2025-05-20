@@ -9,6 +9,9 @@
   --color-my-yellow: #ffa52f;
   --color-grey: #e7e7e3;
   --color-dark-grey: #232321;
+  --color-main-grey: #70706e;
+  --color-white: #ffffff;
+  --color-fa-white: #fafafa;
 }
 
 body {
@@ -26,5 +29,9 @@ body {
 @layer components {
   .header-button {
     @apply px-6 py-2 hover:bg-grey transition cursor-pointer whitespace-nowrap w-full;
+  }
+
+  .footer-button {
+    @apply bg-black p-4 rounded-lg cursor-pointer hover:brightness-90 transition;
   }
 }

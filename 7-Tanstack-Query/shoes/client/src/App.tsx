@@ -5,16 +5,26 @@ import Login from "./page/login";
 import Register from "./page/register";
 import Detail from "./page/detail";
 import Dashboard from "./page/dashboard";
+import Protected from "./components/protected";
 
 const App: FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* bütün kullanıcıların erişebileceği sayfalar */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* kullanıcı giriş yapmışsa erişebileceği sayfalar */}
+        <Route element={<Protected />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/shoe/:id" element={<Detail />} />
+        </Route>
+
+        {/* admin rolüne sahip kullanıcı erişebileceği sayfalar */}
+        <Route element={<Protected allowedRoles={["admin"]} />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

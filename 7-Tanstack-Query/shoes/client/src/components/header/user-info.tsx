@@ -42,7 +42,7 @@ const UserInfo: FC = () => {
               {user.firstName} {user.lastName}
             </button>
             {user.role === "admin" && (
-              <Link to="/admin">
+              <Link to="/dashboard">
                 <button className="header-button">Admin Paneli</button>
               </Link>
             )}

@@ -5,7 +5,7 @@ import UserInfo from "./user-info";
 
 const Header: FC = () => {
   return (
-    <header className="bg-white grid grid-cols-3 p-4 md:p-6 xl:p-8 rounded-[16px] md:rounded-[24px] xl:rounded-[32px] mb-[24px md:mb-[28px] xl:mb-[32px]">
+    <header className="bg-white grid grid-cols-3 p-4 md:p-6 xl:p-8 rounded-[16px] md:rounded-[24px] xl:rounded-[32px] mb-[24px] md:mb-[28px] xl:mb-[32px]">
       <button className="md:hidden cursor-pointer text-xl">
         <Menu className="w-6 h-6" />
       </button>
