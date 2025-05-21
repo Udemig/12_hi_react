@@ -36,7 +36,7 @@ const useCreateShoe = () => {
     mutationFn: (data: IShoeFormValues) => shoeService.create(data),
     onSuccess: () => {
       client.invalidateQueries({ queryKey: ["shoes"] });
-      navigate("/admin");
+      navigate("/dashboard");
       toast.success("Ürün başarıyla oluşturuldu");
     },
     onError: (error: Error) => {
@@ -61,7 +61,7 @@ const useUpdateShoe = () => {
     }) => shoeService.update(id, data),
     onSuccess: () => {
       client.invalidateQueries({ queryKey: ["shoes"] });
-      navigate("/admin");
+      navigate("/dashboard");
       toast.success("Ürün başarıyla güncellendi");
     },
     onError: (error: Error) => {

@@ -5,9 +5,10 @@ interface IInputProps {
   label: string;
   name: string;
   type: string;
+  required?: boolean;
 }
 
-const Input: FC<IInputProps> = ({ label, name, type }) => {
+const Input: FC<IInputProps> = ({ label, name, type, required = true }) => {
   return (
     <div
       className={`relative ${
@@ -23,6 +24,7 @@ const Input: FC<IInputProps> = ({ label, name, type }) => {
           id={name}
           name={name}
           autoComplete={name}
+          required={required}
           type={type}
           as={type === "textarea" ? "textarea" : "input"}
           className="w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-indigo-600 sm:text-sm/6"

@@ -42,12 +42,12 @@ interface IShoe {
 
 interface IShoeFormValues {
   name: string;
-  price: number;
-  description: string;
+  price: string;
+  discount: string;
   color: string;
   size: string;
   isNew: boolean;
-  discoqunt: number;
+  description: string;
   gender: string;
 }
 
