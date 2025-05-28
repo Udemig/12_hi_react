@@ -1,14 +1,24 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// remote font import
+import { Montserrat } from "next/font/google";
+
+// remote font kurulumu
+const montserrat = Montserrat({
   subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// local font import
+import LocalFont from "next/font/local";
+
+// local font kurulumuü
+const mistery = LocalFont({
+  src: "../assets/mistery.otf",
+  variable: "--font-mistery",
+  weight: "100 700",
 });
 
 export const metadata = {
@@ -20,11 +30,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased ${montserrat.variable} ${mistery.variable}`}
       >
-        <div className="text-center my-50 text-2xl font-semibold">
-          {children}
-        </div>
+        <Header />
+        <div className="text-center text-2xl font-semibold">{children}</div>
       </body>
     </html>
   );

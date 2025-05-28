@@ -5,9 +5,30 @@
   --foreground: #171717;
 }
 
+@theme {
+  --font-mistery: var(--font-mistery);
+  --font-montserrat: var(--font-montserrat);
+}
+
 @layer components {
   .box {
     @apply border p-5 rounded-md;
+  }
+
+  .server-component {
+    @apply border-blue-500 border-2 text-white p-5 rounded-md;
+  }
+
+  .client-component {
+    @apply border-red-500 border-2 text-white p-5 rounded-md;
+  }
+
+  .server {
+    @apply bg-blue-500 p-2 rounded-md text-sm font-semibold my-10 text-center;
+  }
+
+  .client {
+    @apply bg-red-500 p-2 rounded-md text-sm font-semibold my-10 text-center;
   }
 }
 

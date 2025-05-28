@@ -1,4 +1,6 @@
+// absolute import
 import { data } from "@/utils/constants";
+
 import Image from "next/image";
 import Link from "next/link";
 

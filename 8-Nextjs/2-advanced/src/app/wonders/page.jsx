@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Wonders() {
   return (
-    <div className="min-h-screen px-10 -mt-30">
+    <div className="min-h-screen px-10">
       <h1 className="text-center text-3xl font-bold mb-10">
         Dünyanın 7 Harikası
       </h1>
