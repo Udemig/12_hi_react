@@ -7,7 +7,7 @@ const SearchForm: FC = () => {
   return (
     <form
       onSubmit={() => {}}
-      className="flex gap-2 py-2 px-4 rounded-full border border-zinc-300 md:w-1/2"
+      className="flex gap-2 mx-3 py-2 px-4 rounded-full border border-zinc-300 md:w-1/2"
     >
       <button className="text-xl text-zinc-700">
         <CiSearch />

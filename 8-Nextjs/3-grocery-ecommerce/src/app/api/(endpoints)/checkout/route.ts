@@ -117,6 +117,7 @@ async function handleSingleItemCheckout(data: any) {
     quantity: quantity,
     money_spend: grocery.price * quantity,
     currency: "TRY",
+    customer_id: customerInfo.userId,
     customer_name: customerInfo.name,
     customer_phone: customerInfo.phone,
     delivery_address: customerInfo.deliveryAddress || "",

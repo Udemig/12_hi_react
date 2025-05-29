@@ -7,6 +7,7 @@ export interface IOrder {
   quantity: number;
   money_spend: number;
   currency: string;
+  customer_id: string;
   customer_name: string;
   customer_phone: string;
   delivery_address?: string;
@@ -21,6 +22,7 @@ const orderSchema = new Schema<IOrder>(
     quantity: { type: Number, required: true, default: 1 },
     money_spend: Number,
     currency: String,
+    customer_id: { type: String, required: true },
     customer_name: { type: String, required: true },
     customer_phone: { type: String, required: true },
     delivery_address: String,

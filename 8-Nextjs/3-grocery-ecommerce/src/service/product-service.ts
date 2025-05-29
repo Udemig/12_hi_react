@@ -1,4 +1,4 @@
-import { GetAllProductsResponse } from "@/types";
+import { GetAllProductsResponse, GetProductByIdResponse } from "@/types";
 
 // temel api adresi
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -10,4 +10,11 @@ const getAllProducts = async (): GetAllProductsResponse => {
   return res.json();
 };
 
-export { getAllProducts };
+// ürünün detayını getir
+const getProductById = async (id: string): GetProductByIdResponse => {
+  const res = await fetch(`${BASE_URL}/api/groceries/${id}`);
+
+  return res.json();
+};
+
+export { getAllProducts, getProductById };
