@@ -1,8 +1,18 @@
-import { fetchRecipe } from "@/utils/service";
+import { fetchRecipe, fetchRecipes } from "@/utils/service";
 import Image from "next/image";
 import Link from "next/link";
 
+// Normal şartlarda dinamik olarak hazırlanan sayfları statik hale getirir.
+export async function generateStaticParams() {
+  // tarif verilerini al
+  const { recipes } = await fetchRecipes();
+  // staik olarak oluşturucak sayfların id'lerini döndürür
+  return recipes.map((recipe) => ({ id: String(recipe.id) }));
+}
+
 async function Page({ params }) {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   // urldeki parametreye eriş
   const { id } = await params;
 

@@ -1,10 +1,17 @@
 import Link from "next/link";
 import { fetchRecipes } from "@/utils/service";
 
+// bu statik olan sayfayı dinamik hale getirir (SSR)
+// export const dynamic = "force-dynamic";
+
+// bu statik sayfayı belirli sürede bir yeniden oluşturur (ISR)
+export const revalidate = 60;
+
 // asenkron bir server component
 // loading ve error stateleine gerek kalmaz oto olarak gelirler
 // api istekleri daha performanslı olur (cache)
 export default async function Page() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   const { recipes } = await fetchRecipes();
 
   return (

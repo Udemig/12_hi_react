@@ -1,121 +1,356 @@
-# Parallel Routes
+# Next.js Advanced Concepts Guide
 
-- Parallel Routes, birden fazla sayfayı aynı anda yüklemek için kullanılır
-- Ekrana paralel routes ile basılan her sayfa kendi bağımsız loading/eror yönetimine sahiptir.
+Bu rehber, Next.js'in gelişmiş özelliklerini ve kavramlarını detaylı bir şekilde açıklamaktadır.
 
-- Slot: @ işareti ile tanımlanan sayfalar slot adı veriler.
-- Slot olarak tanımlanan sayfalar layout component'ına prop olarak gider.
-- Layout component'ında slotlara olarak tanımlanan sayfalara erişebilir ve aynı anda veya koşullu olarak renderlayabiliriz.
+## 📑 İçindekiler
 
-# Intercepting Routes
+- [Parallel Routes](#parallel-routes)
+- [Intercepting Routes](#intercepting-routes)
+- [Next.js Image Component](#nextjs-image-component)
+- [Rendering Yöntemleri](#rendering-yöntemleri)
+- [Data Fetching](#data-fetching)
+- [Import Yöntemleri](#import-yöntemleri)
+- [Font Optimizasyonu](#font-optimizasyonu)
+- [Next.js Metodları](#nextjs-metodları)
+- [Static Site Generation (SSG)](#static-site-generation-ssg)
 
-- Önizleme sayfası oluşturmaya yarar.
+## Parallel Routes
 
-- Kullanıcı bir sayfaya girmek istediğinde, o sayfaya direkt yönlendirmek yerine bir önizleme sayfasına yönlendirip (genelde modal olur) kullanıcıya kesintisiz bir deneyim sağlarız
-- Bu özelliği genel olarak ürün / gönderi detay sayflarında login/register sayfalarında kullanıcyı ana ankıştan koparmamak için kullanırız.
-- Parallel routes ile birlikte kullanıldığında daha verimli olur.
+Parallel Routes, birden fazla sayfayı aynı anda yüklemek için kullanılan güçlü bir Next.js özelliğidir.
 
-# Next.js Image Component
+### Özellikler
 
-- Next.js'de resimler için optimizasyon sağlayan bir component'tir.
-- Normal img etiketi yerine next.js Image component'ini kullanmalıyız.
-- Next.js resimlerin daha optimize daha küçük boyutlu ve daha seo dostu olmaısını sağlar ve resimler daha hızlı yüklenir.
+- Her paralel route kendi bağımsız loading/error yönetimine sahiptir
+- Aynı layout içerisinde birden fazla sayfa renderlanabilir
+- Koşullu rendering yapılabilir
 
-# Client Side Rendering (CSR) vs Server Side Rendering (SSR)
+### Kullanım
 
-## CSR
+- **Slot**: `@` işareti ile tanımlanan sayfalar slot adı verilir
+- Slot olarak tanımlanan sayfalar layout component'ına prop olarak geçer
+- Layout component'ında slotlara erişerek aynı anda veya koşullu olarak renderlanabilir
 
-- Client side rendering yöntemi uygulanan bir sayfaya girdiğimizde `js kodu` ve `boş html dosyası` indiriz.
-- İndrilen js kodu `kendi cihazımızda` çalışır ve html içeriiğini oluşturur.
+```typescript
+// layout.tsx
+export default function Layout({
+  children,
+  analytics,
+  team,
+}: {
+  children: React.ReactNode;
+  analytics: React.ReactNode;
+  team: React.ReactNode;
+}) {
+  return (
+    <>
+      {children}
+      {analytics}
+      {team}
+    </>
+  );
+}
+```
 
-## SSR
+## Intercepting Routes
 
-- Sercer side rendering yöntemi uygulanan bir sayfaya girdiğimizde `dolu html html dosyası` indiriz.
-- JS kodu `serverda` çalışır ve html dosyasını oluştutu client tarafında bu html dosyasu indirilip ekrana basılır
+Önizleme sayfası oluşturmak için kullanılan bir Next.js özelliğidir.
 
-## Neden SSR kullanırız?
+### Amaç
 
-1. Performans: JS kodu client'da çalışıcağına donanım olarak daha güçlü olan server'da çalıştığı için client'a daha az yük bindirir.
-2. SEO: SEO açısından SSR daha avantajlıdır. SSR sayfaların içeriğini serverdea oluşturduğu için arama motorları tarafından kolay indexlenebilir.
+- Kullanıcıyı ana akıştan koparmadan önizleme deneyimi sağlamak
+- Modal tabanlı içerik gösterimi
+- Kesintisiz kullanıcı deneyimi
 
-# Nasıl SSR ve CSR yönetmini kullanırız ?
+### Kullanım Alanları
 
-Next.js'de 2 farklı component türü vardır:
+- Ürün/gönderi detay sayfaları
+- Login/register sayfaları
+- Galeri önizlemeleri
 
-1. Server Component: SSR kullanılarak renderlanır.
-2. Client Component: CSR kullanılarak renderlanır.
+### Avantajlar
 
-- Next.js biz aksini belirtmedikçe her component'ı server component yapar
-- Eğer bir component'ın en üstünde `use client` yazarsak bu component client component olur
+- Parallel routes ile birlikte kullanıldığında daha verimli
+- SEO dostu URL yapısı korunur
+- Hızlı navigasyon deneyimi
 
-- Server componentlar kullanıcı etikileşimlerini (onClick,onSubmit)... ve react hookslarını (useState,useEfect...) kullanamaz,bu yapılar kullanılması gerektiğinde client componentları tercih ederiz.
+## Next.js Image Component
 
-# Data Fetching
+Next.js'in optimize edilmiş resim component'i.
 
-- Next.js'de veri çekme olayının server component'larda yapılması öndeirilir.
-- Server componentlarda veri çektiğimiz zaman next.js api'dan gelen cevabı cache'de tutar ve aynı api isteğini tekrar attığımız zaman api'a gitmek yerine cache'deki cevabı döndürür
+### Avantajlar
 
-- Bu sayaede:
-- - ilk api isteği sonrasında api'dan cevap beklemeye gerek kalmaz
-- - api'a gereksiz istek gitmez
-- - cache özelliği sayesinde eğer api'gelen cevabı birden fazla component'da kullanmak istiyorsak redux vb. gereke kalamdan bütün component'larda api isteğini atabiliriz.
+- **Otomatik optimizasyon**: Resimler otomatik olarak optimize edilir
+- **Lazy loading**: Görünüme geldiğinde yüklenir
+- **Responsive**: Farklı ekran boyutları için optimize edilir
+- **SEO dostu**: Alt text ve diğer SEO özellikleri desteklenir
+- **Performans**: Daha hızlı yükleme süreleri
 
-# Next.js İmport
+```typescript
+import Image from "next/image";
 
-- Bir içeriği import ederken iki farklı yöntem kullanabiliriz:
+<Image src="/hero.jpg" alt="Hero image" width={800} height={600} priority />;
+```
 
-1. `@` ile absolute import
+## Rendering Yöntemleri
 
-- Bu işaret varsayılan olarak import yolunu /src klasöründen başlatır
-- Bu sayede dosya konumu değiştirince hata alma ihtimalini ortadan kaldırır çünkü import yolu değişmez.
+### Client Side Rendering (CSR)
 
-2. `./` ile relative import
+**Nasıl çalışır:**
 
-- Bu import yönteminde import ediceğimiz içerik mevcut dosyadan ne kadar uzaktaysa ona göre import ederiz
+- Tarayıcı boş HTML dosyası ve JavaScript kodu indirir
+- JavaScript kodu client tarafında çalışır
+- HTML içeriği dinamik olarak oluşturulur
 
-# Font
+**Kullanım alanları:**
 
-- Next.js resimlerde olduğu gibi fontlarda optimize edilmiştir.
-- Örneğin bir fontun sadece projede kullanılan boyutlarını import
-- Bu sayede font boyutu küçülür ve daha optimizr oluyor.
-- İki farklı şekilde import edilebilir.
+- Yoğun kullanıcı etkileşimi gerektiren sayfalar
+- Dashboard uygulamaları
+- SPA (Single Page Application) yapıları
 
-1. Local Font
+### Server Side Rendering (SSR)
 
-- Font dosyasının proje içerisinde bulunması gerekir.
+**Nasıl çalışır:**
 
-2. Remote Font
+- Server tarafında HTML içeriği oluşturulur
+- Hazır HTML dosyası client'a gönderilir
+- Daha hızlı ilk yükleme
 
-- Font, google fonts üzerinden import edilir
+**Avantajlar:**
 
-# Next Methods
+1. **Performans**: Server'ın güçlü donanımı kullanılır
+2. **SEO**: Arama motorları tarafından kolay indexlenir
+3. **İlk yükleme hızı**: Daha hızlı First Contentful Paint
 
-## useRouter
+## Component Türleri
 
-- sadece `client component` içerisinde kullanılır
-- proje içerisinde yönlendirme yapmak için kullanılır
-- back() | forward() | refresh() | replace()
+### Server Components
 
-## redirect
+- Varsayılan component türü
+- Server tarafında renderlanır
+- React hooks kullanamaz
+- Event handler'lar kullanamaz
 
-- sadece `server component` içerisinde kullanılır
-- proje içerisinde yönlendirme yapmak için kullanılır
-- redirect("/")
+### Client Components
 
-## notFound
+- `"use client"` direktifi ile tanımlanır
+- Client tarafında renderlanır
+- React hooks kullanabilir
+- Event handler'lar kullanabilir
 
-- hem `server` hemde `client` componentlarda kullanırlır
-- 404 sayfasını renderlar
-- notFound()
+```typescript
+"use client";
+import { useState } from "react";
 
-## usePathname
+export default function Counter() {
+  const [count, setCount] = useState(0);
 
-- sadece `client component` içerisinde kullanılır
-- kullanıcının bulunduğu urldeki aktif path değerini döndürür
-- usePathname
+  return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+}
+```
 
-## useParams
+## Data Fetching
 
-## useSearchParams
+### Server Components'ta Veri Çekme
 
-# SSG (Static Sitre Generation) & generateStaticParams
+**Önerilen yaklaşım**: Server component'larda veri çekme
+
+**Avantajlar:**
+
+- **Caching**: API yanıtları otomatik olarak cache'lenir
+- **Performans**: Gereksiz API istekleri önlenir
+- **Paylaşım**: Aynı veri birden fazla component'ta kullanılabilir
+
+```typescript
+async function getData() {
+  const res = await fetch("https://api.example.com/data");
+  return res.json();
+}
+
+export default async function Page() {
+  const data = await getData();
+
+  return <div>{data.title}</div>;
+}
+```
+
+## Import Yöntemleri
+
+### 1. Absolute Import (`@`)
+
+- `/src` klasöründen başlar
+- Dosya konumu değişse bile import yolu sabit kalır
+- Daha temiz ve sürdürülebilir kod
+
+```typescript
+import Component from "@/components/Component";
+import { utils } from "@/lib/utils";
+```
+
+### 2. Relative Import (`./`)
+
+- Mevcut dosyadan relative path
+- Dosya hiyerarşisine bağımlı
+
+```typescript
+import Component from "./Component";
+import { utils } from "../lib/utils";
+```
+
+## Font Optimizasyonu
+
+Next.js fontları otomatik olarak optimize eder.
+
+### Local Font
+
+```typescript
+import localFont from "next/font/local";
+
+const myFont = localFont({
+  src: "./my-font.woff2",
+  display: "swap",
+});
+```
+
+### Google Fonts
+
+```typescript
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+```
+
+## Next.js Metodları
+
+### Client Component Metodları
+
+#### `useRouter`
+
+```typescript
+"use client";
+import { useRouter } from "next/navigation";
+
+const router = useRouter();
+router.push("/dashboard");
+router.back();
+router.forward();
+router.refresh();
+```
+
+#### `usePathname`
+
+```typescript
+"use client";
+import { usePathname } from "next/navigation";
+
+const pathname = usePathname(); // '/dashboard/settings'
+```
+
+#### `useParams`
+
+```typescript
+"use client";
+import { useParams } from "next/navigation";
+
+const params = useParams(); // { id: '123' }
+```
+
+#### `useSearchParams`
+
+```typescript
+"use client";
+import { useSearchParams } from "next/navigation";
+
+const searchParams = useSearchParams();
+const query = searchParams.get("q"); // 'search-term'
+```
+
+### Server Component Metodları
+
+#### `redirect`
+
+```typescript
+import { redirect } from "next/navigation";
+
+export default function Page() {
+  redirect("/login");
+}
+```
+
+#### `notFound`
+
+```typescript
+import { notFound } from "next/navigation";
+
+export default function Page() {
+  notFound(); // 404 sayfasını gösterir
+}
+```
+
+## Static Site Generation (SSG)
+
+### Statik Sayfalar
+
+- Build anında oluşturulur
+- Her istekte aynı HTML sunulur
+- Çok hızlı yükleme
+
+**Kullanım alanları:**
+
+- Hakkımızda sayfaları
+- Blog yazıları
+- Dokümantasyon
+
+### Dinamik Sayfalar
+
+#### Server Side Rendering (SSR)
+
+```typescript
+export const dynamic = "force-dynamic";
+
+export default async function Page() {
+  const data = await fetch("https://api.example.com/data");
+  return <div>{data.title}</div>;
+}
+```
+
+#### Incremental Static Regeneration (ISR)
+
+```typescript
+export const revalidate = 60; // 60 saniyede bir yeniden oluştur
+
+export default async function Page() {
+  const data = await fetch("https://api.example.com/data");
+  return <div>{data.title}</div>;
+}
+```
+
+### `generateStaticParams`
+
+Dinamik route'ları build anında statik hale getirir.
+
+```typescript
+export async function generateStaticParams() {
+  const posts = await fetch("https://api.example.com/posts").then((res) =>
+    res.json()
+  );
+
+  return posts.map((post) => ({
+    id: post.id,
+  }));
+}
+
+export default function Page({ params }: { params: { id: string } }) {
+  return <div>Post ID: {params.id}</div>;
+}
+```
+
+## 🚀 Sonuç
+
+Bu rehber Next.js'in gelişmiş özelliklerini kapsamlı bir şekilde ele almaktadır. Her özellik, modern web geliştirme ihtiyaçlarını karşılamak için tasarlanmış olup, performans, SEO ve kullanıcı deneyimi açısından önemli avantajlar sağlar.
+
+---
+
+**Not**: Bu döküman Next.js 13+ App Router yapısını baz almaktadır.
