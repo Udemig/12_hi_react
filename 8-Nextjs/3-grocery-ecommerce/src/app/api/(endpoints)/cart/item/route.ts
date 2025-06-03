@@ -9,11 +9,17 @@ export async function PUT(req: Request) {
     const { userId, groceryId, quantity } = data;
 
     if (!userId || !groceryId) {
-      return NextResponse.json({ message: "Kullanıcı ID ve Ürün ID gerekli" }, { status: 400 });
+      return NextResponse.json(
+        { message: "Kullanıcı ID ve Ürün ID gerekli" },
+        { status: 400 }
+      );
     }
 
     if (!quantity || quantity < 1) {
-      return NextResponse.json({ message: "Geçerli bir miktar gerekli" }, { status: 400 });
+      return NextResponse.json(
+        { message: "Geçerli bir miktar gerekli" },
+        { status: 400 }
+      );
     }
 
     await connectMongo();
@@ -22,7 +28,10 @@ export async function PUT(req: Request) {
     const cart = await Cart.findOne({ userId });
 
     if (!cart) {
-      return NextResponse.json({ message: "Sepet bulunamadı" }, { status: 404 });
+      return NextResponse.json(
+        { message: "Sepet bulunamadı" },
+        { status: 404 }
+      );
     }
 
     // Ürünün sepette olup olmadığını kontrol et
@@ -31,7 +40,10 @@ export async function PUT(req: Request) {
     );
 
     if (itemIndex === -1) {
-      return NextResponse.json({ message: "Ürün sepette bulunamadı" }, { status: 404 });
+      return NextResponse.json(
+        { message: "Ürün sepette bulunamadı" },
+        { status: 404 }
+      );
     }
 
     // Ürün miktarını güncelle
@@ -42,11 +54,14 @@ export async function PUT(req: Request) {
 
     return NextResponse.json({
       message: "Ürün miktarı güncellendi",
-      cart: updatedCart
+      cart: updatedCart,
     });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: "Ürün güncellenemedi" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Ürün güncellenemedi" },
+      { status: 500 }
+    );
   }
 }
 
@@ -58,7 +73,10 @@ export async function DELETE(req: Request) {
     const groceryId = searchParams.get("groceryId");
 
     if (!userId || !groceryId) {
-      return NextResponse.json({ message: "Kullanıcı ID ve Ürün ID gerekli" }, { status: 400 });
+      return NextResponse.json(
+        { message: "Kullanıcı ID ve Ürün ID gerekli" },
+        { status: 400 }
+      );
     }
 
     await connectMongo();
@@ -67,7 +85,10 @@ export async function DELETE(req: Request) {
     const cart = await Cart.findOne({ userId });
 
     if (!cart) {
-      return NextResponse.json({ message: "Sepet bulunamadı" }, { status: 404 });
+      return NextResponse.json(
+        { message: "Sepet bulunamadı" },
+        { status: 404 }
+      );
     }
 
     // Sepetten ürünü kaldır
@@ -81,10 +102,13 @@ export async function DELETE(req: Request) {
 
     return NextResponse.json({
       message: "Ürün sepetten kaldırıldı",
-      cart: updatedCart
+      cart: updatedCart,
     });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: "Ürün kaldırılamadı" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Ürün kaldırılamadı" },
+      { status: 500 }
+    );
   }
-} 
+}

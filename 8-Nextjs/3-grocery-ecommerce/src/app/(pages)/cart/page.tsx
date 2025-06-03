@@ -3,9 +3,14 @@ import ClearBtn from "@/components/cart/clear-btn";
 import CartSummary from "@/components/cart/cart-summary";
 import { getCartItems } from "@/service/basket-service";
 import { FC } from "react";
+import EmptyCart from "@/components/cart/empty-cart";
 
 const CartPage: FC = async () => {
   const { cart } = await getCartItems();
+
+  if (!cart || cart.items.length === 0) {
+    return <EmptyCart />;
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">

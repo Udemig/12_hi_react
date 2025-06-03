@@ -237,6 +237,7 @@ async function handleCartCheckout(data: any) {
       quantity: item.quantity,
       money_spend: item.price * item.quantity,
       currency: "TRY",
+      customer_id: customerInfo.userId,
       customer_name: customerInfo.name,
       customer_phone: customerInfo.phone,
       delivery_address: customerInfo.deliveryAddress || "",

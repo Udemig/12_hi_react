@@ -31,6 +31,22 @@ type Cart = {
   __v: number;
 };
 
+type Order = {
+  _id: string;
+  product: Product;
+  quantity: number;
+  money_spend: number;
+  currency: "TRY";
+  customer_id: string;
+  customer_name: string;
+  customer_phone: string;
+  delivery_address: string;
+  is_delivery: boolean;
+  createdAt: string;
+  updatedAt: string;
+  __v: 0;
+};
+
 // Promise Tipleri
 type GetAllProductsResponse = Promise<{
   groceries: Product[];
@@ -53,6 +69,10 @@ type GetCartItemsResponse = Promise<{
   cart: Cart;
 }>;
 
+type GetMyOrdersResponse = Promise<{
+  orders: Order[];
+}>;
+
 export type {
   Product,
   Cart,
@@ -61,4 +81,6 @@ export type {
   GetProductByIdResponse,
   CheckoutSingleItemResponse,
   GetCartItemsResponse,
+  Order,
+  GetMyOrdersResponse,
 };

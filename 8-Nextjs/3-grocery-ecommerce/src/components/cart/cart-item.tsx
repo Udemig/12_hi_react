@@ -16,7 +16,7 @@ interface Props {
 
 const CartItem: FC<Props> = ({ item }) => {
   return (
-    <li className="flex items-center p-4">
+    <li className="flex items-center p-4 gap-4">
       <div className="overflow-hidden rounded-lg">
         <Image
           src={item.grocery.photo}

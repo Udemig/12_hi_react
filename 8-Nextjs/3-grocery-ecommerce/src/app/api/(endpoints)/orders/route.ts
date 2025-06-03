@@ -2,11 +2,23 @@ import { NextResponse } from "next/server";
 import Order from "../../models/Order";
 import connectMongo from "../../utils/connectMongo";
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
     await connectMongo();
 
-    const orders = await Order.find().populate("product");
+    // URL'den query parametrelerini al
+    const { searchParams } = new URL(req.url);
+    const customer_id = searchParams.get("customer_id");
+
+    let orders;
+
+    // Eğer customer_id verilmişse sadece o kullanıcının siparişlerini getir
+    if (customer_id) {
+      orders = await Order.find({ customer_id }).populate("product");
+    } else {
+      // customer_id verilmemişse tüm siparişleri getir
+      orders = await Order.find().populate("product");
+    }
 
     return NextResponse.json({ orders });
   } catch (error) {
