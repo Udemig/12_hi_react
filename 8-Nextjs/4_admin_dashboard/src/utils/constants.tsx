@@ -89,4 +89,12 @@ export const inputs = [
   },
 ];
 
-export const categories = ["Elektronik", "Giyim", "Aksesuar", "Ev", "Kitap"];
+export const categories = [
+  { label: "Kategori Seçiniz", value: "" },
+  { label: "Elektronik", value: "Electronics" },
+  { label: "Giyim", value: "Clothing" },
+  { label: "Ayakkabı", value: "Shoes" },
+  { label: "Aksesuar", value: "Accessories" },
+  { label: "Ev", value: "Home" },
+  { label: "Kitap", value: "Books" },
+];

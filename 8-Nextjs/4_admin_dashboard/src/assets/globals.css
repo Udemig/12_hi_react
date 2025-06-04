@@ -30,4 +30,16 @@ body {
   .subtitle {
     @apply text-lg font-semibold md:text-xl;
   }
+
+  .card-btn {
+    @apply flex-1 bg-blue-50 text-blue-600 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-100 transition-colors duration-200 text-center border border-blue-200 hover:border-blue-300;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .input {
+    @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border;
+  }
 }

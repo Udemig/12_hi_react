@@ -30,10 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
       >
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen overflow-hidden w-screen">
           <Sidebar />
 
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col min-w-[450px] w-full">
             <Header />
 
             <main className="flex-1 bg-[#edeff5] text-black">{children}</main>
